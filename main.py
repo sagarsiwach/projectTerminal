@@ -9,11 +9,11 @@ async def main():
     config = read_config()
 
     # Increase production and storage without a loop
-    await construct_capital()
+    await construct_capital(cookies)
     while True:
-        await increase_storage_async(10000, cookies)
-        await increase_production_async(10000, cookies)
-        # await start_large_celebration(50000, cookies)
+        await increase_storage_async(125000, cookies)
+        await increase_production_async(200000, cookies)
+        await start_large_celebration(80000, cookies)
         # print(f"Production completed: {config['production_completed']}, Storage completed: {config['storage_completed']}")
 
 if __name__ == "__main__":
