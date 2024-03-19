@@ -1,3 +1,5 @@
+import subprocess
+import sys
 import csv
 import logging
 import time
@@ -25,7 +27,15 @@ async def increase_production_async(loop_count, cookies):
                 # Retrieve the key for increasing production
                 get_response = await client.get("https://fun.gotravspeed.com/buy2.php?t=0")
                 soup = BeautifulSoup(get_response.text, 'html.parser')
-                key = soup.find('input', {'name': 'key'})['value']
+                key_element = soup.find('input', {'name': 'key'})
+
+                if key_element is None:
+                    logger.error("Failed to find key for increasing production. Retrying login...")
+                    cookies = await login()
+                    get_response = await client.get("https://fun.gotravspeed.com/buy2.php?t=0")  # Fetch the page again to get a new key
+                    continue  # Skip this iteration and retry with new login
+
+                key = key_element['value']
 
                 # Increase production
                 data = {
@@ -35,11 +45,11 @@ async def increase_production_async(loop_count, cookies):
                     'key': key
                 }
                 await client.post("https://fun.gotravspeed.com/buy2.php?t=0&Shop=done", data=data)
-                logger.info("Resource Increased")
+                logger.info("Production Increased")
             except Exception as e:
-                logger.error(f"Error during production increase: {e}")
+                logger.error(f"Error during storage increase: {e}")
 
-# Asynchronous function to increase storage
+
 async def increase_storage_async(loop_count, cookies):
     async with httpx.AsyncClient(cookies=cookies) as client:
         for _ in range(loop_count):
@@ -47,7 +57,24 @@ async def increase_storage_async(loop_count, cookies):
                 # Retrieve the key for increasing storage
                 get_response = await client.get("https://fun.gotravspeed.com/buy2.php?t=2")
                 soup = BeautifulSoup(get_response.text, 'html.parser')
-                key = soup.find('input', {'name': 'key'})['value']
+                key_element = soup.find('input', {'name': 'key'})
+
+                if key_element is None:
+                    logger.error("Failed to find key for increasing storage. Retrying login...")
+                    cookies = await login()
+                    # Add a delay to ensure the page is fully loaded before trying to get the key again
+                    await asyncio.sleep(2)
+                    get_response = await client.get("https://fun.gotravspeed.com/buy2.php?t=2")
+                    soup = BeautifulSoup(get_response.text, 'html.parser')
+                    key_element = soup.find('input', {'name': 'key'})
+
+                    # Check if the key is still not found after re-login
+                    if key_element is None:
+                        logger.error("Failed to find key for increasing storage after re-login. Restarting script.")
+                        subprocess.Popen([sys.executable, 'main.py'])  # Start a new instance of the script
+                        sys.exit(1)  # Exit the current script
+
+                key = key_element['value']
 
                 # Increase storage
                 data = {
@@ -64,23 +91,27 @@ async def increase_storage_async(loop_count, cookies):
 # Asynchronous function to start a large celebration multiple times
 async def start_large_celebration(loop_count, cookies):
     async with httpx.AsyncClient(cookies=cookies) as client:
+        # Initial URL to retrieve the celebration page
+        url = "https://fun.gotravspeed.com/build.php?id=35"
+
         for _ in range(loop_count):
             try:
-                # Retrieve the celebration page
-                get_response = await client.get("https://fun.gotravspeed.com/build.php?id=35")
+                # Retrieve the celebration page or start the celebration
+                get_response = await client.get(url)
                 soup = BeautifulSoup(get_response.text, 'html.parser')
 
                 # Parse the key for the large celebration
                 celebration_link = soup.find('a', {'class': 'build', 'href': True})
                 if celebration_link:
                     celebration_url = celebration_link['href']
-                    # Start the large celebration
-                    await client.get(f"https://fun.gotravspeed.com/{celebration_url}")
+                    # Update the URL for the next iteration to start the celebration directly
+                    url = f"https://fun.gotravspeed.com/{celebration_url}"
                     logger.info("Large Celebration Started")
                 else:
                     logger.error("Failed to parse celebration key")
             except Exception as e:
                 logger.error(f"Error during large celebration: {e}")
+
 
 # Write updated configuration to CSV
 def write_config(config):

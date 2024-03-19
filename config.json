@@ -1,274 +1,274 @@
 {
-    "username": "dravaz",
-    "password": "satkabir",
-    "productionLoops": 10000,
-    "storageLoops": 10000,
-    "celebrationLoops": 10000,
-    "building": [
+  "username": "scar",
+  "password": "satkabir",
+  "productionLoops": 10000,
+  "storageLoops": 10000,
+  "celebrationLoops": 10000,
+  "building": [
+    {
+      "type": "capital",
+      "construction": [
         {
-            "type": "capital",
-            "construction": [
-                {
-                    "pid": 26,
-                    "bid": 15,
-                    "loop": 20
-                },
-                {
-                    "pid": 39,
-                    "bid": 16,
-                    "loop": 20
-                },
-                {
-                    "pid": 40,
-                    "bid": 33,
-                    "loop": 20
-                },
-                {
-                    "pid": 25,
-                    "bid": 19,
-                    "loop": 20
-                },
-                {
-                    "pid": 33,
-                    "bid": 22,
-                    "loop": 20
-                },
-                {
-                    "pid": 30,
-                    "bid": 25,
-                    "loop": 20
-                },
-                {
-                    "pid": 29,
-                    "bid": 13,
-                    "loop": 20
-                },
-                {
-                    "pid": 21,
-                    "bid": 12,
-                    "loop": 20
-                },
-                {
-                    "pid": 34,
-                    "bid": 7,
-                    "loop": 10
-                },
-                {
-                    "pid": 31,
-                    "bid": 5,
-                    "loop": 10
-                },
-                {
-                    "pid": 27,
-                    "bid": 6,
-                    "loop": 10
-                },
-                {
-                    "pid": 24,
-                    "bid": 37,
-                    "loop": 20
-                },
-                {
-                    "pid": 23,
-                    "bid": 44,
-                    "loop": 1
-                },
-                {
-                    "pid": 22,
-                    "bid": 11,
-                    "loop": 20
-                },
-                {
-                    "pid": 20,
-                    "bid": 17,
-                    "loop": 20
-                },
-                {
-                    "pid": 19,
-                    "bid": 20,
-                    "loop": 20
-                },
-                {
-                    "pid": 28,
-                    "bid": 21,
-                    "loop": 20
-                },
-                {
-                    "pid": 32,
-                    "bid": 14,
-                    "loop": 20
-                },
-                {
-                    "pid": 35,
-                    "bid": 24,
-                    "loop": 20
-                },
-                {
-                    "pid": 38,
-                    "bid": 18,
-                    "loop": 20
-                },
-                {
-                    "pid": 37,
-                    "bid": 27,
-                    "loop": 20
-                }
-            ]
+          "pid": 26,
+          "bid": 15,
+          "loop": 20
         },
         {
-            "type": "secondary",
-            "construction": [
-                {
-                    "pid": 26,
-                    "bid": 15,
-                    "loop": 10
-                },
-                {
-                    "pid": 39,
-                    "bid": 16,
-                    "loop": 10
-                },
-                {
-                    "pid": 30,
-                    "bid": 25,
-                    "loop": 20
-                },
-                {
-                    "pid": 24,
-                    "bid": 44,
-                    "loop": 1
-                }
-            ]
+          "pid": 39,
+          "bid": 16,
+          "loop": 20
         },
         {
-            "type": "artefact",
-            "construction": [
-                {
-                    "pid": 26,
-                    "bid": 15,
-                    "loop": 20
-                },
-                {
-                    "pid": 39,
-                    "bid": 16,
-                    "loop": 20
-                },
-                {
-                    "pid": 30,
-                    "bid": 25,
-                    "loop": 20
-                },
-                {
-                    "pid": 24,
-                    "bid": 44,
-                    "loop": 1
-                },
-                {
-                    "pid": 25,
-                    "bid": 19,
-                    "loop": 20
-                },
-                {
-                    "pid": 33,
-                    "bid": 22,
-                    "loop": 20
-                },
-                {
-                    "pid": 37,
-                    "bid": 27,
-                    "loop": 20
-                }
-            ]
+          "pid": 40,
+          "bid": 33,
+          "loop": 20
+        },
+        {
+          "pid": 25,
+          "bid": 19,
+          "loop": 20
+        },
+        {
+          "pid": 33,
+          "bid": 22,
+          "loop": 20
+        },
+        {
+          "pid": 30,
+          "bid": 25,
+          "loop": 20
+        },
+        {
+          "pid": 29,
+          "bid": 13,
+          "loop": 20
+        },
+        {
+          "pid": 21,
+          "bid": 12,
+          "loop": 20
+        },
+        {
+          "pid": 34,
+          "bid": 7,
+          "loop": 10
+        },
+        {
+          "pid": 31,
+          "bid": 5,
+          "loop": 10
+        },
+        {
+          "pid": 27,
+          "bid": 6,
+          "loop": 10
+        },
+        {
+          "pid": 24,
+          "bid": 37,
+          "loop": 20
+        },
+        {
+          "pid": 23,
+          "bid": 44,
+          "loop": 1
+        },
+        {
+          "pid": 22,
+          "bid": 11,
+          "loop": 20
+        },
+        {
+          "pid": 20,
+          "bid": 17,
+          "loop": 20
+        },
+        {
+          "pid": 19,
+          "bid": 20,
+          "loop": 20
+        },
+        {
+          "pid": 28,
+          "bid": 21,
+          "loop": 20
+        },
+        {
+          "pid": 32,
+          "bid": 14,
+          "loop": 20
+        },
+        {
+          "pid": 35,
+          "bid": 24,
+          "loop": 20
+        },
+        {
+          "pid": 38,
+          "bid": 18,
+          "loop": 20
+        },
+        {
+          "pid": 37,
+          "bid": 27,
+          "loop": 20
         }
-    ],
-    "villages": {
-        "residenceID": "30",
-        "settlerID": "10",
-        "villages": [
-            {
-                "id": 0,
-                "villageID": 6449,
-                "villageName": "0000",
-                "villageType": "capital"
-            },
-            {
-                "id": 1,
-                "villageID": 4448,
-                "villageName": "0001",
-                "villageType": "artefact"
-            },
-            {
-                "id": 2,
-                "villageID": 4442,
-                "villageName": "0002",
-                "villageType": "artefact"
-            },
-            {
-                "id": 3,
-                "villageID": 6450,
-                "villageName": "0003",
-                "villageType": "artefact"
-            },
-            {
-                "id": 4,
-                "villageID": 4449,
-                "villageName": "0004",
-                "villageType": "artefact"
-            },
-            {
-                "id": 5,
-                "villageID": 4439,
-                "villageName": "0005",
-                "villageType": "artefact"
-            },
-            {
-                "id": 6,
-                "villageID": 4446,
-                "villageName": "0006",
-                "villageType": "artefact"
-            },
-            {
-                "id": 7,
-                "villageID": 4443,
-                "villageName": "0007",
-                "villageType": "artefact"
-            },
-            {
-                "id": 8,
-                "villageID": 4445,
-                "villageName": "0008",
-                "villageType": "artefact"
-            },
-            {
-                "id": 9,
-                "villageID": 4440,
-                "villageName": "0009",
-                "villageType": "artefact"
-            },
-            {
-                "id": 10,
-                "villageID": 4444,
-                "villageName": "0010",
-                "villageType": "artefact"
-            },
-            {
-                "id": 11,
-                "villageID": 7256,
-                "villageName": "0011",
-                "villageType": "secondary"
-            },
-            {
-                "id": 12,
-                "villageID": 7657,
-                "villageName": "0012",
-                "villageType": "secondary"
-            },
-            {
-                "id": 13,
-                "villageID": 8058,
-                "villageName": "0013",
-                "villageType": "secondary"
-            }
-        ]
+      ]
+    },
+    {
+      "type": "secondary",
+      "construction": [
+        {
+          "pid": 26,
+          "bid": 15,
+          "loop": 10
+        },
+        {
+          "pid": 39,
+          "bid": 16,
+          "loop": 10
+        },
+        {
+          "pid": 30,
+          "bid": 25,
+          "loop": 20
+        },
+        {
+          "pid": 24,
+          "bid": 44,
+          "loop": 1
+        }
+      ]
+    },
+    {
+      "type": "artefact",
+      "construction": [
+        {
+          "pid": 26,
+          "bid": 15,
+          "loop": 20
+        },
+        {
+          "pid": 39,
+          "bid": 16,
+          "loop": 20
+        },
+        {
+          "pid": 30,
+          "bid": 25,
+          "loop": 20
+        },
+        {
+          "pid": 24,
+          "bid": 44,
+          "loop": 1
+        },
+        {
+          "pid": 25,
+          "bid": 19,
+          "loop": 20
+        },
+        {
+          "pid": 33,
+          "bid": 22,
+          "loop": 20
+        },
+        {
+          "pid": 37,
+          "bid": 27,
+          "loop": 20
+        }
+      ]
     }
+  ],
+  "villages": {
+    "residenceID": "30",
+    "settlerID": "10",
+    "villages": [
+      {
+        "id": 0,
+        "villageID": 6449,
+        "villageName": "0000",
+        "villageType": "capital"
+      },
+      {
+        "id": 1,
+        "villageID": 4448,
+        "villageName": "0001",
+        "villageType": "artefact"
+      },
+      {
+        "id": 2,
+        "villageID": 4442,
+        "villageName": "0002",
+        "villageType": "artefact"
+      },
+      {
+        "id": 3,
+        "villageID": 6450,
+        "villageName": "0003",
+        "villageType": "artefact"
+      },
+      {
+        "id": 4,
+        "villageID": 4449,
+        "villageName": "0004",
+        "villageType": "artefact"
+      },
+      {
+        "id": 5,
+        "villageID": 4439,
+        "villageName": "0005",
+        "villageType": "artefact"
+      },
+      {
+        "id": 6,
+        "villageID": 4446,
+        "villageName": "0006",
+        "villageType": "artefact"
+      },
+      {
+        "id": 7,
+        "villageID": 4443,
+        "villageName": "0007",
+        "villageType": "artefact"
+      },
+      {
+        "id": 8,
+        "villageID": 4445,
+        "villageName": "0008",
+        "villageType": "artefact"
+      },
+      {
+        "id": 9,
+        "villageID": 4440,
+        "villageName": "0009",
+        "villageType": "artefact"
+      },
+      {
+        "id": 10,
+        "villageID": 4444,
+        "villageName": "0010",
+        "villageType": "artefact"
+      },
+      {
+        "id": 11,
+        "villageID": 7256,
+        "villageName": "0011",
+        "villageType": "secondary"
+      },
+      {
+        "id": 12,
+        "villageID": 7657,
+        "villageName": "0012",
+        "villageType": "secondary"
+      },
+      {
+        "id": 13,
+        "villageID": 8058,
+        "villageName": "0013",
+        "villageType": "secondary"
+      }
+    ]
+  }
 }

@@ -122,8 +122,8 @@ async def switch_village(cookies, village_id):
         else:
             logging.error(f"Failed to switch to village ID {village_id}")
 
-async def construct_capital(cookies, village_id):
-    await switch_village(cookies, village_id)
+async def construct_capital():
+    # await switch_village(cookies, village_id)
     capital_data = next((item for item in config["building"] if item["type"] == "capital"), None)
     if capital_data is None:
         logging.error("Capital data not found in config")
