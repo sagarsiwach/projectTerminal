@@ -187,87 +187,39 @@
     "villages": [
       {
         "id": 0,
-        "villageID": 6449,
+        "villageID": 842,
         "villageName": "0000",
         "villageType": "capital"
       },
       {
         "id": 1,
-        "villageID": 4448,
+        "villageID": 442,
         "villageName": "0001",
         "villageType": "artefact"
       },
       {
         "id": 2,
-        "villageID": 4442,
-        "villageName": "0002",
+        "villageID": 1242,
+        "villageName": "New village",
         "villageType": "artefact"
       },
       {
         "id": 3,
-        "villageID": 6450,
-        "villageName": "0003",
+        "villageID": 1243,
+        "villageName": "New village",
         "villageType": "artefact"
       },
       {
         "id": 4,
-        "villageID": 4449,
-        "villageName": "0004",
+        "villageID": 1244,
+        "villageName": "New village",
         "villageType": "artefact"
       },
       {
         "id": 5,
-        "villageID": 4439,
-        "villageName": "0005",
+        "villageID": 843,
+        "villageName": "0002",
         "villageType": "artefact"
-      },
-      {
-        "id": 6,
-        "villageID": 4446,
-        "villageName": "0006",
-        "villageType": "artefact"
-      },
-      {
-        "id": 7,
-        "villageID": 4443,
-        "villageName": "0007",
-        "villageType": "artefact"
-      },
-      {
-        "id": 8,
-        "villageID": 4445,
-        "villageName": "0008",
-        "villageType": "artefact"
-      },
-      {
-        "id": 9,
-        "villageID": 4440,
-        "villageName": "0009",
-        "villageType": "artefact"
-      },
-      {
-        "id": 10,
-        "villageID": 4444,
-        "villageName": "0010",
-        "villageType": "artefact"
-      },
-      {
-        "id": 11,
-        "villageID": 7256,
-        "villageName": "0011",
-        "villageType": "secondary"
-      },
-      {
-        "id": 12,
-        "villageID": 7657,
-        "villageName": "0012",
-        "villageType": "secondary"
-      },
-      {
-        "id": 13,
-        "villageID": 8058,
-        "villageName": "0013",
-        "villageType": "secondary"
       }
     ]
   }

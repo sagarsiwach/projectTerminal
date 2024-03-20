@@ -1,0 +1,724 @@
+2024-03-20 10:09:15,613 - INFO - HTTP Request: GET https://gotravspeed.com "HTTP/1.1 200 OK"
+2024-03-20 10:09:15,883 - INFO - HTTP Request: POST https://gotravspeed.com "HTTP/1.1 302 Found"
+2024-03-20 10:09:16,148 - INFO - HTTP Request: GET https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:09:16,414 - INFO - HTTP Request: POST https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:09:16,681 - INFO - HTTP Request: POST https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:09:17,681 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village1.php "HTTP/1.1 200 OK"
+2024-03-20 10:09:31,669 - INFO - HTTP Request: GET https://gotravspeed.com "HTTP/1.1 200 OK"
+2024-03-20 10:09:31,938 - INFO - HTTP Request: POST https://gotravspeed.com "HTTP/1.1 302 Found"
+2024-03-20 10:09:32,202 - INFO - HTTP Request: GET https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:09:32,464 - INFO - HTTP Request: POST https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:09:32,727 - INFO - HTTP Request: POST https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:09:33,758 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village1.php "HTTP/1.1 200 OK"
+2024-03-20 10:09:34,792 - INFO - HTTP Request: GET https://fun.gotravspeed.com/profile.php "HTTP/1.1 200 OK"
+2024-03-20 10:09:34,809 - INFO - Number of village rows: 4
+2024-03-20 10:09:34,812 - INFO - Updated configuration:
+{
+    "username": "dravaz",
+    "password": "satkabir",
+    "productionLoops": 10000,
+    "storageLoops": 10000,
+    "celebrationLoops": 10000,
+    "building": [
+        {
+            "type": "capital",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 20
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 20
+                },
+                {
+                    "pid": 40,
+                    "bid": 33,
+                    "loop": 20
+                },
+                {
+                    "pid": 25,
+                    "bid": 19,
+                    "loop": 20
+                },
+                {
+                    "pid": 33,
+                    "bid": 22,
+                    "loop": 20
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 29,
+                    "bid": 13,
+                    "loop": 20
+                },
+                {
+                    "pid": 21,
+                    "bid": 12,
+                    "loop": 20
+                },
+                {
+                    "pid": 34,
+                    "bid": 7,
+                    "loop": 10
+                },
+                {
+                    "pid": 31,
+                    "bid": 5,
+                    "loop": 10
+                },
+                {
+                    "pid": 27,
+                    "bid": 6,
+                    "loop": 10
+                },
+                {
+                    "pid": 24,
+                    "bid": 37,
+                    "loop": 20
+                },
+                {
+                    "pid": 23,
+                    "bid": 44,
+                    "loop": 1
+                },
+                {
+                    "pid": 22,
+                    "bid": 11,
+                    "loop": 20
+                },
+                {
+                    "pid": 20,
+                    "bid": 17,
+                    "loop": 20
+                },
+                {
+                    "pid": 19,
+                    "bid": 20,
+                    "loop": 20
+                },
+                {
+                    "pid": 28,
+                    "bid": 21,
+                    "loop": 20
+                },
+                {
+                    "pid": 32,
+                    "bid": 14,
+                    "loop": 20
+                },
+                {
+                    "pid": 35,
+                    "bid": 24,
+                    "loop": 20
+                },
+                {
+                    "pid": 38,
+                    "bid": 18,
+                    "loop": 20
+                },
+                {
+                    "pid": 37,
+                    "bid": 27,
+                    "loop": 20
+                }
+            ]
+        },
+        {
+            "type": "secondary",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 10
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 10
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 24,
+                    "bid": 44,
+                    "loop": 1
+                }
+            ]
+        },
+        {
+            "type": "artefact",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 20
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 20
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 24,
+                    "bid": 44,
+                    "loop": 1
+                },
+                {
+                    "pid": 25,
+                    "bid": 19,
+                    "loop": 20
+                },
+                {
+                    "pid": 33,
+                    "bid": 22,
+                    "loop": 20
+                },
+                {
+                    "pid": 37,
+                    "bid": 27,
+                    "loop": 20
+                }
+            ]
+        }
+    ],
+    "villages": {
+        "residenceID": "30",
+        "settlerID": "10",
+        "villages": [
+            {
+                "id": 0,
+                "villageID": 842,
+                "villageName": "0000",
+                "villageType": "capital"
+            },
+            {
+                "id": 1,
+                "villageID": 442,
+                "villageName": "New village",
+                "villageType": "artefact"
+            },
+            {
+                "id": 2,
+                "villageID": 843,
+                "villageName": "0002",
+                "villageType": "artefact"
+            }
+        ]
+    }
+}
+2024-03-20 10:09:35,858 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village2.php?vid=843 "HTTP/1.1 200 OK"
+2024-03-20 10:09:36,125 - INFO - HTTP Request: GET https://fun.gotravspeed.com/profile.php?t=1 "HTTP/1.1 200 OK"
+2024-03-20 10:09:36,388 - INFO - HTTP Request: POST https://fun.gotravspeed.com/profile.php "HTTP/1.1 302 Found"
+2024-03-20 10:09:36,390 - ERROR - Failed to rename latest village to 0002
+2024-03-20 10:09:37,373 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village2.php?vid=843 "HTTP/1.1 200 OK"
+2024-03-20 10:09:37,374 - INFO - Switched to village ID 843
+2024-03-20 10:09:38,402 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=26 "HTTP/1.1 200 OK"
+2024-03-20 10:09:38,414 - WARNING - Construction link not found for village ID 26, building ID 15. Skipping...
+2024-03-20 10:09:39,435 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=39 "HTTP/1.1 200 OK"
+2024-03-20 10:09:39,446 - WARNING - Construction link not found for village ID 39, building ID 16. Skipping...
+2024-03-20 10:09:40,430 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=30 "HTTP/1.1 200 OK"
+2024-03-20 10:09:40,435 - WARNING - Construction link not found for village ID 30, building ID 25. Skipping...
+2024-03-20 10:09:41,431 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=24 "HTTP/1.1 200 OK"
+2024-03-20 10:09:41,443 - WARNING - Construction link not found for village ID 24, building ID 44. Skipping...
+2024-03-20 10:09:42,447 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=25 "HTTP/1.1 200 OK"
+2024-03-20 10:09:42,464 - WARNING - Construction link not found for village ID 25, building ID 19. Skipping...
+2024-03-20 10:09:43,499 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=33 "HTTP/1.1 200 OK"
+2024-03-20 10:09:43,513 - INFO - Academy is fully upgraded. Skipping...
+2024-03-20 10:09:44,534 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=37 "HTTP/1.1 200 OK"
+2024-03-20 10:09:44,544 - WARNING - Construction link not found for village ID 37, building ID 27. Skipping...
+2024-03-20 10:10:18,006 - INFO - HTTP Request: GET https://gotravspeed.com "HTTP/1.1 200 OK"
+2024-03-20 10:10:18,273 - INFO - HTTP Request: POST https://gotravspeed.com "HTTP/1.1 302 Found"
+2024-03-20 10:10:18,538 - INFO - HTTP Request: GET https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:10:18,799 - INFO - HTTP Request: POST https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:10:19,063 - INFO - HTTP Request: POST https://gotravspeed.com/game/servers "HTTP/1.1 200 OK"
+2024-03-20 10:10:20,063 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village1.php "HTTP/1.1 200 OK"
+2024-03-20 10:10:21,100 - INFO - HTTP Request: GET https://fun.gotravspeed.com/profile.php "HTTP/1.1 200 OK"
+2024-03-20 10:10:21,114 - INFO - Number of village rows: 4
+2024-03-20 10:10:21,115 - INFO - Updated configuration:
+{
+    "username": "dravaz",
+    "password": "satkabir",
+    "productionLoops": 10000,
+    "storageLoops": 10000,
+    "celebrationLoops": 10000,
+    "building": [
+        {
+            "type": "capital",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 20
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 20
+                },
+                {
+                    "pid": 40,
+                    "bid": 33,
+                    "loop": 20
+                },
+                {
+                    "pid": 25,
+                    "bid": 19,
+                    "loop": 20
+                },
+                {
+                    "pid": 33,
+                    "bid": 22,
+                    "loop": 20
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 29,
+                    "bid": 13,
+                    "loop": 20
+                },
+                {
+                    "pid": 21,
+                    "bid": 12,
+                    "loop": 20
+                },
+                {
+                    "pid": 34,
+                    "bid": 7,
+                    "loop": 10
+                },
+                {
+                    "pid": 31,
+                    "bid": 5,
+                    "loop": 10
+                },
+                {
+                    "pid": 27,
+                    "bid": 6,
+                    "loop": 10
+                },
+                {
+                    "pid": 24,
+                    "bid": 37,
+                    "loop": 20
+                },
+                {
+                    "pid": 23,
+                    "bid": 44,
+                    "loop": 1
+                },
+                {
+                    "pid": 22,
+                    "bid": 11,
+                    "loop": 20
+                },
+                {
+                    "pid": 20,
+                    "bid": 17,
+                    "loop": 20
+                },
+                {
+                    "pid": 19,
+                    "bid": 20,
+                    "loop": 20
+                },
+                {
+                    "pid": 28,
+                    "bid": 21,
+                    "loop": 20
+                },
+                {
+                    "pid": 32,
+                    "bid": 14,
+                    "loop": 20
+                },
+                {
+                    "pid": 35,
+                    "bid": 24,
+                    "loop": 20
+                },
+                {
+                    "pid": 38,
+                    "bid": 18,
+                    "loop": 20
+                },
+                {
+                    "pid": 37,
+                    "bid": 27,
+                    "loop": 20
+                }
+            ]
+        },
+        {
+            "type": "secondary",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 10
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 10
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 24,
+                    "bid": 44,
+                    "loop": 1
+                }
+            ]
+        },
+        {
+            "type": "artefact",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 20
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 20
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 24,
+                    "bid": 44,
+                    "loop": 1
+                },
+                {
+                    "pid": 25,
+                    "bid": 19,
+                    "loop": 20
+                },
+                {
+                    "pid": 33,
+                    "bid": 22,
+                    "loop": 20
+                },
+                {
+                    "pid": 37,
+                    "bid": 27,
+                    "loop": 20
+                }
+            ]
+        }
+    ],
+    "villages": {
+        "residenceID": "30",
+        "settlerID": "10",
+        "villages": [
+            {
+                "id": 0,
+                "villageID": 842,
+                "villageName": "0000",
+                "villageType": "capital"
+            },
+            {
+                "id": 1,
+                "villageID": 442,
+                "villageName": "New village",
+                "villageType": "artefact"
+            },
+            {
+                "id": 2,
+                "villageID": 843,
+                "villageName": "0002",
+                "villageType": "artefact"
+            }
+        ]
+    }
+}
+2024-03-20 10:10:22,143 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village2.php?vid=843 "HTTP/1.1 200 OK"
+2024-03-20 10:10:22,408 - INFO - HTTP Request: GET https://fun.gotravspeed.com/profile.php?t=1 "HTTP/1.1 200 OK"
+2024-03-20 10:10:22,673 - INFO - HTTP Request: POST https://fun.gotravspeed.com/profile.php "HTTP/1.1 302 Found"
+2024-03-20 10:10:22,675 - ERROR - Failed to rename latest village to 0002
+2024-03-20 10:10:23,695 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village2.php?vid=843 "HTTP/1.1 200 OK"
+2024-03-20 10:10:23,698 - INFO - Switched to village ID 843
+2024-03-20 10:10:24,710 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=26 "HTTP/1.1 200 OK"
+2024-03-20 10:10:24,725 - WARNING - Construction link not found for village ID 26, building ID 15. Skipping...
+2024-03-20 10:10:25,696 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=39 "HTTP/1.1 200 OK"
+2024-03-20 10:10:25,711 - WARNING - Construction link not found for village ID 39, building ID 16. Skipping...
+2024-03-20 10:10:26,760 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=30 "HTTP/1.1 200 OK"
+2024-03-20 10:10:26,773 - WARNING - Construction link not found for village ID 30, building ID 25. Skipping...
+2024-03-20 10:10:27,799 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=24 "HTTP/1.1 200 OK"
+2024-03-20 10:10:27,810 - WARNING - Construction link not found for village ID 24, building ID 44. Skipping...
+2024-03-20 10:10:28,811 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=25 "HTTP/1.1 200 OK"
+2024-03-20 10:10:28,819 - WARNING - Construction link not found for village ID 25, building ID 19. Skipping...
+2024-03-20 10:10:29,823 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=33 "HTTP/1.1 200 OK"
+2024-03-20 10:10:29,831 - INFO - Academy is fully upgraded. Skipping...
+2024-03-20 10:10:30,851 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=37 "HTTP/1.1 200 OK"
+2024-03-20 10:10:30,857 - WARNING - Construction link not found for village ID 37, building ID 27. Skipping...
+2024-03-20 10:10:31,821 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=30 "HTTP/1.1 200 OK"
+2024-03-20 10:10:31,829 - INFO - Settlers already trained or not available for training in village ID {village_id}
+2024-03-20 10:10:32,837 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village3.php?id=440 "HTTP/1.1 200 OK"
+2024-03-20 10:10:33,835 - INFO - HTTP Request: GET https://fun.gotravspeed.com/v2v.php?id=440 "HTTP/1.1 200 OK"
+2024-03-20 10:10:34,105 - INFO - HTTP Request: POST https://fun.gotravspeed.com/v2v.php "HTTP/1.1 200 OK"
+2024-03-20 10:10:34,106 - INFO - Settlers sent to new village at 440
+2024-03-20 10:10:34,106 - INFO - Settlers sent to new village.
+2024-03-20 10:10:36,117 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village1.php "HTTP/1.1 200 OK"
+2024-03-20 10:10:37,377 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village1.php "HTTP/1.1 200 OK"
+2024-03-20 10:10:38,404 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village1.php?id=440 "HTTP/1.1 200 OK"
+2024-03-20 10:10:38,405 - ERROR - Failed to handle new village popup.
+2024-03-20 10:10:49,445 - INFO - HTTP Request: GET https://fun.gotravspeed.com/profile.php "HTTP/1.1 200 OK"
+2024-03-20 10:10:49,460 - INFO - Number of village rows: 4
+2024-03-20 10:10:49,461 - INFO - Updated configuration:
+{
+    "username": "dravaz",
+    "password": "satkabir",
+    "productionLoops": 10000,
+    "storageLoops": 10000,
+    "celebrationLoops": 10000,
+    "building": [
+        {
+            "type": "capital",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 20
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 20
+                },
+                {
+                    "pid": 40,
+                    "bid": 33,
+                    "loop": 20
+                },
+                {
+                    "pid": 25,
+                    "bid": 19,
+                    "loop": 20
+                },
+                {
+                    "pid": 33,
+                    "bid": 22,
+                    "loop": 20
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 29,
+                    "bid": 13,
+                    "loop": 20
+                },
+                {
+                    "pid": 21,
+                    "bid": 12,
+                    "loop": 20
+                },
+                {
+                    "pid": 34,
+                    "bid": 7,
+                    "loop": 10
+                },
+                {
+                    "pid": 31,
+                    "bid": 5,
+                    "loop": 10
+                },
+                {
+                    "pid": 27,
+                    "bid": 6,
+                    "loop": 10
+                },
+                {
+                    "pid": 24,
+                    "bid": 37,
+                    "loop": 20
+                },
+                {
+                    "pid": 23,
+                    "bid": 44,
+                    "loop": 1
+                },
+                {
+                    "pid": 22,
+                    "bid": 11,
+                    "loop": 20
+                },
+                {
+                    "pid": 20,
+                    "bid": 17,
+                    "loop": 20
+                },
+                {
+                    "pid": 19,
+                    "bid": 20,
+                    "loop": 20
+                },
+                {
+                    "pid": 28,
+                    "bid": 21,
+                    "loop": 20
+                },
+                {
+                    "pid": 32,
+                    "bid": 14,
+                    "loop": 20
+                },
+                {
+                    "pid": 35,
+                    "bid": 24,
+                    "loop": 20
+                },
+                {
+                    "pid": 38,
+                    "bid": 18,
+                    "loop": 20
+                },
+                {
+                    "pid": 37,
+                    "bid": 27,
+                    "loop": 20
+                }
+            ]
+        },
+        {
+            "type": "secondary",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 10
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 10
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 24,
+                    "bid": 44,
+                    "loop": 1
+                }
+            ]
+        },
+        {
+            "type": "artefact",
+            "construction": [
+                {
+                    "pid": 26,
+                    "bid": 15,
+                    "loop": 20
+                },
+                {
+                    "pid": 39,
+                    "bid": 16,
+                    "loop": 20
+                },
+                {
+                    "pid": 30,
+                    "bid": 25,
+                    "loop": 20
+                },
+                {
+                    "pid": 24,
+                    "bid": 44,
+                    "loop": 1
+                },
+                {
+                    "pid": 25,
+                    "bid": 19,
+                    "loop": 20
+                },
+                {
+                    "pid": 33,
+                    "bid": 22,
+                    "loop": 20
+                },
+                {
+                    "pid": 37,
+                    "bid": 27,
+                    "loop": 20
+                }
+            ]
+        }
+    ],
+    "villages": {
+        "residenceID": "30",
+        "settlerID": "10",
+        "villages": [
+            {
+                "id": 0,
+                "villageID": 842,
+                "villageName": "0000",
+                "villageType": "capital"
+            },
+            {
+                "id": 1,
+                "villageID": 442,
+                "villageName": "New village",
+                "villageType": "artefact"
+            },
+            {
+                "id": 2,
+                "villageID": 843,
+                "villageName": "0002",
+                "villageType": "artefact"
+            }
+        ]
+    }
+}
+2024-03-20 10:10:50,480 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village2.php?vid=843 "HTTP/1.1 200 OK"
+2024-03-20 10:10:50,749 - INFO - HTTP Request: GET https://fun.gotravspeed.com/profile.php?t=1 "HTTP/1.1 200 OK"
+2024-03-20 10:10:51,011 - INFO - HTTP Request: POST https://fun.gotravspeed.com/profile.php "HTTP/1.1 302 Found"
+2024-03-20 10:10:51,013 - ERROR - Failed to rename latest village to 0002
+2024-03-20 10:10:52,004 - INFO - HTTP Request: GET https://fun.gotravspeed.com/village2.php?vid=843 "HTTP/1.1 200 OK"
+2024-03-20 10:10:52,006 - INFO - Switched to village ID 843
+2024-03-20 10:10:52,987 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=26 "HTTP/1.1 200 OK"
+2024-03-20 10:10:53,001 - WARNING - Construction link not found for village ID 26, building ID 15. Skipping...
+2024-03-20 10:10:54,006 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=39 "HTTP/1.1 200 OK"
+2024-03-20 10:10:54,017 - WARNING - Construction link not found for village ID 39, building ID 16. Skipping...
+2024-03-20 10:10:55,001 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=30 "HTTP/1.1 200 OK"
+2024-03-20 10:10:55,016 - WARNING - Construction link not found for village ID 30, building ID 25. Skipping...
+2024-03-20 10:10:56,030 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=24 "HTTP/1.1 200 OK"
+2024-03-20 10:10:56,043 - WARNING - Construction link not found for village ID 24, building ID 44. Skipping...
+2024-03-20 10:10:57,032 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=25 "HTTP/1.1 200 OK"
+2024-03-20 10:10:57,044 - WARNING - Construction link not found for village ID 25, building ID 19. Skipping...
+2024-03-20 10:10:58,068 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=33 "HTTP/1.1 200 OK"
+2024-03-20 10:10:58,080 - INFO - Academy is fully upgraded. Skipping...
+2024-03-20 10:10:59,095 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=37 "HTTP/1.1 200 OK"
+2024-03-20 10:10:59,108 - WARNING - Construction link not found for village ID 37, building ID 27. Skipping...
+2024-03-20 10:11:00,101 - INFO - HTTP Request: GET https://fun.gotravspeed.com/build.php?id=30 "HTTP/1.1 200 OK"
+2024-03-20 10:11:00,113 - INFO - Settlers already trained or not available for training in village ID {village_id}

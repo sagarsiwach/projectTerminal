@@ -116,14 +116,14 @@ async def upgrade_smithy(cookies):
 
 async def switch_village(cookies, village_id):
     async with httpx.AsyncClient(cookies=cookies) as client:
-        response = await client.get(f"{base_url}/village1.php?vid={village_id}")
+        response = await client.get(f"{base_url}/village2.php?vid={village_id}")
         if response.status_code == 200:
             logging.info(f"Switched to village ID {village_id}")
         else:
             logging.error(f"Failed to switch to village ID {village_id}")
 
-async def construct_capital(cookies):
-    # await switch_village(cookies, village_id)
+async def construct_capital(cookies, village_id):
+    await switch_village(cookies, village_id)
     capital_data = next((item for item in config["building"] if item["type"] == "capital"), None)
     if capital_data is None:
         logging.error("Capital data not found in config")
@@ -143,13 +143,6 @@ async def construct_capital(cookies):
             elif bid == 33:
                 await research_academy(cookies)
 
-    # Update JSON configuration
-    for village in config["villages"]["villages"]:
-        if village["villageID"] == village_id:
-            village["constructionDone"] = True
-            break
-    write_config(config)
-
 async def construct_artefact(cookies, village_id):
     await switch_village(cookies, village_id)
     artefact_data = next((item for item in config["building"] if item["type"] == "artefact"), None)
@@ -163,13 +156,6 @@ async def construct_artefact(cookies, village_id):
         loop = building["loop"]
         await construct_and_upgrade_building(cookies, village_id=pid, building_id=bid, loops=loop)
 
-    # Update JSON configuration
-    for village in config["villages"]["villages"]:
-        if village["villageID"] == village_id:
-            village["constructionDone"] = True
-            break
-    write_config(config)
-
 async def construct_secondary(cookies, village_id):
     await switch_village(cookies, village_id)
     secondary_data = next((item for item in config["building"] if item["type"] == "secondary"), None)
@@ -182,10 +168,3 @@ async def construct_secondary(cookies, village_id):
         bid = building["bid"]
         loop = building["loop"]
         await construct_and_upgrade_building(cookies, village_id=pid, building_id=bid, loops=loop)
-
-    # Update JSON configuration
-    for village in config["villages"]["villages"]:
-        if village["villageID"] == village_id:
-            village["constructionDone"] = True
-            break
-    write_config(config)
