@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import logging
 import asyncio
 from login import login
-
+import random
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -87,10 +87,9 @@ async def attack_village(cookies, village_url):
         print(f"Error attacking village with ID {village_id}: {e}")
 
 
-
 async def train_troops(cookies, village_id):
     async def send_train_request(session):
-        url = f"https://fun.gotravspeed.com/build.php?id={village_id}"
+        url = f"https://fun.gotravspeed.com/build.php?id=25"
         headers = {
             "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
             "accept-language": "en-US,en;q=0.9",
@@ -113,7 +112,7 @@ async def train_troops(cookies, village_id):
             logging.error(f"Error during Praetorians training: {response.status_code}")
 
     async with httpx.AsyncClient(cookies=cookies) as session:
-        tasks = [send_train_request(session) for _ in range(150)]
+        tasks = [send_train_request(session) for _ in range(3)]
         await asyncio.gather(*tasks)
 
 async def main():
@@ -122,12 +121,23 @@ async def main():
     excluded_village_ids = ['9631']
     villages = await get_player_villages(cookies, uid, excluded_village_ids)
 
-    while True:
-        for village in villages:
+    random.shuffle(villages)  # Shuffle the order of villages
+
+    for village in villages:
+        try:
+            logging.info(f"Starting attack on village {village[0]}")
             await attack_village(cookies, village[1])
-            train_tasks = [train_troops(cookies, village[1].split('=')[-1]) for _ in range(100)]
+            logging.info(f"Finished attack on village {village[0]}")
+            logging.info(f"Starting training troops in village {village[0]}")
+            train_tasks = [train_troops(cookies, village[1].split('=')[-1]) for _ in range(200)]
             await asyncio.gather(*train_tasks)
-            await asyncio.sleep(1)  # Adjust the sleep time as needed
+            logging.info(f"Finished training troops in village {village[0]}")
+        except Exception as e:
+            logging.error(f"Error processing village {village[0]}: {e}")
+        await asyncio.sleep(1)  # Adjust the sleep time as needed
+
+
+
 
 if __name__ == "__main__":
     asyncio.run(main())
