@@ -122,7 +122,13 @@ async def send_settlers_and_handle_popup(cookies, new_village_id):
     async with httpx.AsyncClient(cookies=cookies) as client:
         # Fetch the v2v.php page to extract the key
         response = await client.get(f"https://fun.gotravspeed.com/v2v.php?id={new_village_id}")
-        key = extract_key_from_v2v_page(response.text)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        key_input = soup.find('input', {'name': 'k'})
+        if key_input:
+            key = key_input.get('value')
+        else:
+            logging.error("Failed to extract CSRF key for sending settlers.")
+            return False
 
         # Send settlers to the new village
         response = await client.post("https://fun.gotravspeed.com/v2v.php", data={
@@ -130,13 +136,16 @@ async def send_settlers_and_handle_popup(cookies, new_village_id):
             'c': 4,
             't[1]': 0, 't[2]': 0, 't[3]': 0, 't[4]': 0, 't[5]': 0,
             't[6]': 0, 't[7]': 0, 't[8]': 0, 't[9]': 0, 't[10]': 3,
-            'key': key
+            'k': key
         })
         if response.status_code == 200:
             logging.info(f"Settlers sent to new village at {new_village_id}")
             # Update settlements.json to mark the village as settled
             settlements = load_settlements()
-            settlements.append({'id': new_village_id, 'settled': True})
+            for village in settlements:
+                if village['id'] == new_village_id:
+                    village['settled'] = True
+                    break
             save_settlements(settlements)
 
             # Wait for 2 seconds before checking for the new village popup
@@ -162,6 +171,7 @@ async def send_settlers_and_handle_popup(cookies, new_village_id):
         else:
             logging.error(f"Failed to send settlers to new village at {new_village_id}")
             return False
+
 
 
 async def expand_village(cookies):
