@@ -1,0 +1,1572 @@
+{
+    "villages": [
+        {
+            "id": 9223,
+            "settled": false
+        },
+        {
+            "id": 9225,
+            "settled": false
+        },
+        {
+            "id": 9626,
+            "settled": false
+        },
+        {
+            "id": 10027,
+            "settled": false
+        },
+        {
+            "id": 10025,
+            "settled": false
+        },
+        {
+            "id": 9624,
+            "settled": false
+        },
+        {
+            "id": 8821,
+            "settled": false
+        },
+        {
+            "id": 8823,
+            "settled": false
+        },
+        {
+            "id": 8824,
+            "settled": false
+        },
+        {
+            "id": 8825,
+            "settled": false
+        },
+        {
+            "id": 10028,
+            "settled": false
+        },
+        {
+            "id": 9627,
+            "settled": false
+        },
+        {
+            "id": 9226,
+            "settled": false
+        },
+        {
+            "id": 10429,
+            "settled": false
+        },
+        {
+            "id": 10428,
+            "settled": false
+        },
+        {
+            "id": 10427,
+            "settled": false
+        },
+        {
+            "id": 10425,
+            "settled": false
+        },
+        {
+            "id": 9222,
+            "settled": false
+        },
+        {
+            "id": 10024,
+            "settled": false
+        },
+        {
+            "id": 8419,
+            "settled": false
+        },
+        {
+            "id": 8420,
+            "settled": false
+        },
+        {
+            "id": 8421,
+            "settled": false
+        },
+        {
+            "id": 8422,
+            "settled": false
+        },
+        {
+            "id": 8423,
+            "settled": false
+        },
+        {
+            "id": 8424,
+            "settled": false
+        },
+        {
+            "id": 8425,
+            "settled": false
+        },
+        {
+            "id": 10029,
+            "settled": false
+        },
+        {
+            "id": 9628,
+            "settled": false
+        },
+        {
+            "id": 9227,
+            "settled": false
+        },
+        {
+            "id": 8826,
+            "settled": false
+        },
+        {
+            "id": 10831,
+            "settled": false
+        },
+        {
+            "id": 10830,
+            "settled": false
+        },
+        {
+            "id": 10829,
+            "settled": false
+        },
+        {
+            "id": 10828,
+            "settled": false
+        },
+        {
+            "id": 10827,
+            "settled": false
+        },
+        {
+            "id": 10826,
+            "settled": false
+        },
+        {
+            "id": 10825,
+            "settled": false
+        },
+        {
+            "id": 8820,
+            "settled": false
+        },
+        {
+            "id": 9622,
+            "settled": false
+        },
+        {
+            "id": 10023,
+            "settled": false
+        },
+        {
+            "id": 10424,
+            "settled": false
+        },
+        {
+            "id": 8017,
+            "settled": false
+        },
+        {
+            "id": 8018,
+            "settled": false
+        },
+        {
+            "id": 8019,
+            "settled": false
+        },
+        {
+            "id": 8021,
+            "settled": false
+        },
+        {
+            "id": 8022,
+            "settled": false
+        },
+        {
+            "id": 8023,
+            "settled": false
+        },
+        {
+            "id": 8024,
+            "settled": false
+        },
+        {
+            "id": 8025,
+            "settled": false
+        },
+        {
+            "id": 10431,
+            "settled": false
+        },
+        {
+            "id": 9228,
+            "settled": false
+        },
+        {
+            "id": 8827,
+            "settled": false
+        },
+        {
+            "id": 8426,
+            "settled": false
+        },
+        {
+            "id": 11233,
+            "settled": false
+        },
+        {
+            "id": 11232,
+            "settled": false
+        },
+        {
+            "id": 11230,
+            "settled": false
+        },
+        {
+            "id": 11229,
+            "settled": false
+        },
+        {
+            "id": 11227,
+            "settled": false
+        },
+        {
+            "id": 11225,
+            "settled": false
+        },
+        {
+            "id": 8418,
+            "settled": false
+        },
+        {
+            "id": 8819,
+            "settled": false
+        },
+        {
+            "id": 9220,
+            "settled": false
+        },
+        {
+            "id": 9621,
+            "settled": false
+        },
+        {
+            "id": 10022,
+            "settled": false
+        },
+        {
+            "id": 10423,
+            "settled": false
+        },
+        {
+            "id": 7615,
+            "settled": false
+        },
+        {
+            "id": 7616,
+            "settled": false
+        },
+        {
+            "id": 7617,
+            "settled": false
+        },
+        {
+            "id": 7618,
+            "settled": false
+        },
+        {
+            "id": 7619,
+            "settled": false
+        },
+        {
+            "id": 7620,
+            "settled": false
+        },
+        {
+            "id": 7621,
+            "settled": false
+        },
+        {
+            "id": 7622,
+            "settled": false
+        },
+        {
+            "id": 7624,
+            "settled": false
+        },
+        {
+            "id": 7625,
+            "settled": false
+        },
+        {
+            "id": 11234,
+            "settled": false
+        },
+        {
+            "id": 10833,
+            "settled": false
+        },
+        {
+            "id": 10432,
+            "settled": false
+        },
+        {
+            "id": 9630,
+            "settled": false
+        },
+        {
+            "id": 9229,
+            "settled": false
+        },
+        {
+            "id": 8828,
+            "settled": false
+        },
+        {
+            "id": 8026,
+            "settled": false
+        },
+        {
+            "id": 11632,
+            "settled": false
+        },
+        {
+            "id": 11631,
+            "settled": false
+        },
+        {
+            "id": 11630,
+            "settled": false
+        },
+        {
+            "id": 11628,
+            "settled": false
+        },
+        {
+            "id": 11627,
+            "settled": false
+        },
+        {
+            "id": 11626,
+            "settled": false
+        },
+        {
+            "id": 8417,
+            "settled": false
+        },
+        {
+            "id": 8818,
+            "settled": false
+        },
+        {
+            "id": 9219,
+            "settled": false
+        },
+        {
+            "id": 9620,
+            "settled": false
+        },
+        {
+            "id": 10021,
+            "settled": false
+        },
+        {
+            "id": 10422,
+            "settled": false
+        },
+        {
+            "id": 10823,
+            "settled": false
+        },
+        {
+            "id": 11224,
+            "settled": false
+        },
+        {
+            "id": 7213,
+            "settled": false
+        },
+        {
+            "id": 7214,
+            "settled": false
+        },
+        {
+            "id": 7215,
+            "settled": false
+        },
+        {
+            "id": 7216,
+            "settled": false
+        },
+        {
+            "id": 7217,
+            "settled": false
+        },
+        {
+            "id": 7218,
+            "settled": false
+        },
+        {
+            "id": 7219,
+            "settled": false
+        },
+        {
+            "id": 7220,
+            "settled": false
+        },
+        {
+            "id": 7221,
+            "settled": false
+        },
+        {
+            "id": 7222,
+            "settled": false
+        },
+        {
+            "id": 7223,
+            "settled": false
+        },
+        {
+            "id": 7224,
+            "settled": false
+        },
+        {
+            "id": 7225,
+            "settled": false
+        },
+        {
+            "id": 11636,
+            "settled": false
+        },
+        {
+            "id": 11235,
+            "settled": false
+        },
+        {
+            "id": 10834,
+            "settled": false
+        },
+        {
+            "id": 10433,
+            "settled": false
+        },
+        {
+            "id": 10032,
+            "settled": false
+        },
+        {
+            "id": 9230,
+            "settled": false
+        },
+        {
+            "id": 8428,
+            "settled": false
+        },
+        {
+            "id": 8027,
+            "settled": false
+        },
+        {
+            "id": 12037,
+            "settled": false
+        },
+        {
+            "id": 12036,
+            "settled": false
+        },
+        {
+            "id": 12035,
+            "settled": false
+        },
+        {
+            "id": 12034,
+            "settled": false
+        },
+        {
+            "id": 12033,
+            "settled": false
+        },
+        {
+            "id": 12032,
+            "settled": false
+        },
+        {
+            "id": 12031,
+            "settled": false
+        },
+        {
+            "id": 12030,
+            "settled": false
+        },
+        {
+            "id": 12027,
+            "settled": false
+        },
+        {
+            "id": 12026,
+            "settled": false
+        },
+        {
+            "id": 12025,
+            "settled": false
+        },
+        {
+            "id": 8015,
+            "settled": false
+        },
+        {
+            "id": 8416,
+            "settled": false
+        },
+        {
+            "id": 9218,
+            "settled": false
+        },
+        {
+            "id": 10020,
+            "settled": false
+        },
+        {
+            "id": 10822,
+            "settled": false
+        },
+        {
+            "id": 11223,
+            "settled": false
+        },
+        {
+            "id": 6814,
+            "settled": false
+        },
+        {
+            "id": 6815,
+            "settled": false
+        },
+        {
+            "id": 6816,
+            "settled": false
+        },
+        {
+            "id": 6817,
+            "settled": false
+        },
+        {
+            "id": 6819,
+            "settled": false
+        },
+        {
+            "id": 6820,
+            "settled": false
+        },
+        {
+            "id": 6821,
+            "settled": false
+        },
+        {
+            "id": 6823,
+            "settled": false
+        },
+        {
+            "id": 6824,
+            "settled": false
+        },
+        {
+            "id": 6825,
+            "settled": false
+        },
+        {
+            "id": 11637,
+            "settled": false
+        },
+        {
+            "id": 11236,
+            "settled": false
+        },
+        {
+            "id": 10835,
+            "settled": false
+        },
+        {
+            "id": 10434,
+            "settled": false
+        },
+        {
+            "id": 10033,
+            "settled": false
+        },
+        {
+            "id": 9632,
+            "settled": false
+        },
+        {
+            "id": 9231,
+            "settled": false
+        },
+        {
+            "id": 8830,
+            "settled": false
+        },
+        {
+            "id": 8429,
+            "settled": false
+        },
+        {
+            "id": 8028,
+            "settled": false
+        },
+        {
+            "id": 7627,
+            "settled": false
+        },
+        {
+            "id": 7226,
+            "settled": false
+        },
+        {
+            "id": 12439,
+            "settled": false
+        },
+        {
+            "id": 12438,
+            "settled": false
+        },
+        {
+            "id": 12437,
+            "settled": false
+        },
+        {
+            "id": 12434,
+            "settled": false
+        },
+        {
+            "id": 12433,
+            "settled": false
+        },
+        {
+            "id": 12432,
+            "settled": false
+        },
+        {
+            "id": 12429,
+            "settled": false
+        },
+        {
+            "id": 12428,
+            "settled": false
+        },
+        {
+            "id": 12426,
+            "settled": false
+        },
+        {
+            "id": 12425,
+            "settled": false
+        },
+        {
+            "id": 7212,
+            "settled": false
+        },
+        {
+            "id": 7613,
+            "settled": false
+        },
+        {
+            "id": 8014,
+            "settled": false
+        },
+        {
+            "id": 8415,
+            "settled": false
+        },
+        {
+            "id": 9217,
+            "settled": false
+        },
+        {
+            "id": 10019,
+            "settled": false
+        },
+        {
+            "id": 10420,
+            "settled": false
+        },
+        {
+            "id": 10821,
+            "settled": false
+        },
+        {
+            "id": 11222,
+            "settled": false
+        },
+        {
+            "id": 11623,
+            "settled": false
+        },
+        {
+            "id": 6409,
+            "settled": false
+        },
+        {
+            "id": 6412,
+            "settled": false
+        },
+        {
+            "id": 6413,
+            "settled": false
+        },
+        {
+            "id": 6414,
+            "settled": false
+        },
+        {
+            "id": 6415,
+            "settled": false
+        },
+        {
+            "id": 6416,
+            "settled": false
+        },
+        {
+            "id": 6419,
+            "settled": false
+        },
+        {
+            "id": 6420,
+            "settled": false
+        },
+        {
+            "id": 6421,
+            "settled": false
+        },
+        {
+            "id": 6422,
+            "settled": false
+        },
+        {
+            "id": 6423,
+            "settled": false
+        },
+        {
+            "id": 6424,
+            "settled": false
+        },
+        {
+            "id": 11638,
+            "settled": false
+        },
+        {
+            "id": 11237,
+            "settled": false
+        },
+        {
+            "id": 10836,
+            "settled": false
+        },
+        {
+            "id": 10435,
+            "settled": false
+        },
+        {
+            "id": 10034,
+            "settled": false
+        },
+        {
+            "id": 9633,
+            "settled": false
+        },
+        {
+            "id": 9232,
+            "settled": false
+        },
+        {
+            "id": 8831,
+            "settled": false
+        },
+        {
+            "id": 8430,
+            "settled": false
+        },
+        {
+            "id": 8029,
+            "settled": false
+        },
+        {
+            "id": 7227,
+            "settled": false
+        },
+        {
+            "id": 12841,
+            "settled": false
+        },
+        {
+            "id": 12840,
+            "settled": false
+        },
+        {
+            "id": 12839,
+            "settled": false
+        },
+        {
+            "id": 12838,
+            "settled": false
+        },
+        {
+            "id": 12836,
+            "settled": false
+        },
+        {
+            "id": 12834,
+            "settled": false
+        },
+        {
+            "id": 12832,
+            "settled": false
+        },
+        {
+            "id": 12831,
+            "settled": false
+        },
+        {
+            "id": 12829,
+            "settled": false
+        },
+        {
+            "id": 12825,
+            "settled": false
+        },
+        {
+            "id": 7612,
+            "settled": false
+        },
+        {
+            "id": 8013,
+            "settled": false
+        },
+        {
+            "id": 8414,
+            "settled": false
+        },
+        {
+            "id": 9216,
+            "settled": false
+        },
+        {
+            "id": 9617,
+            "settled": false
+        },
+        {
+            "id": 10018,
+            "settled": false
+        },
+        {
+            "id": 10419,
+            "settled": false
+        },
+        {
+            "id": 10820,
+            "settled": false
+        },
+        {
+            "id": 11221,
+            "settled": false
+        },
+        {
+            "id": 11622,
+            "settled": false
+        },
+        {
+            "id": 12424,
+            "settled": false
+        },
+        {
+            "id": 6007,
+            "settled": false
+        },
+        {
+            "id": 6008,
+            "settled": false
+        },
+        {
+            "id": 6011,
+            "settled": false
+        },
+        {
+            "id": 6013,
+            "settled": false
+        },
+        {
+            "id": 6015,
+            "settled": false
+        },
+        {
+            "id": 6016,
+            "settled": false
+        },
+        {
+            "id": 6018,
+            "settled": false
+        },
+        {
+            "id": 6021,
+            "settled": false
+        },
+        {
+            "id": 6022,
+            "settled": false
+        },
+        {
+            "id": 6023,
+            "settled": false
+        },
+        {
+            "id": 6024,
+            "settled": false
+        },
+        {
+            "id": 6025,
+            "settled": false
+        },
+        {
+            "id": 12842,
+            "settled": false
+        },
+        {
+            "id": 11639,
+            "settled": false
+        },
+        {
+            "id": 10837,
+            "settled": false
+        },
+        {
+            "id": 10436,
+            "settled": false
+        },
+        {
+            "id": 10035,
+            "settled": false
+        },
+        {
+            "id": 9233,
+            "settled": false
+        },
+        {
+            "id": 8832,
+            "settled": false
+        },
+        {
+            "id": 8431,
+            "settled": false
+        },
+        {
+            "id": 7228,
+            "settled": false
+        },
+        {
+            "id": 6426,
+            "settled": false
+        },
+        {
+            "id": 13243,
+            "settled": false
+        },
+        {
+            "id": 13242,
+            "settled": false
+        },
+        {
+            "id": 13240,
+            "settled": false
+        },
+        {
+            "id": 13239,
+            "settled": false
+        },
+        {
+            "id": 13238,
+            "settled": false
+        },
+        {
+            "id": 13237,
+            "settled": false
+        },
+        {
+            "id": 13234,
+            "settled": false
+        },
+        {
+            "id": 13233,
+            "settled": false
+        },
+        {
+            "id": 13232,
+            "settled": false
+        },
+        {
+            "id": 13231,
+            "settled": false
+        },
+        {
+            "id": 13230,
+            "settled": false
+        },
+        {
+            "id": 13229,
+            "settled": false
+        },
+        {
+            "id": 13227,
+            "settled": false
+        },
+        {
+            "id": 13226,
+            "settled": false
+        },
+        {
+            "id": 13225,
+            "settled": false
+        },
+        {
+            "id": 6408,
+            "settled": false
+        },
+        {
+            "id": 6809,
+            "settled": false
+        },
+        {
+            "id": 7210,
+            "settled": false
+        },
+        {
+            "id": 7611,
+            "settled": false
+        },
+        {
+            "id": 8012,
+            "settled": false
+        },
+        {
+            "id": 8413,
+            "settled": false
+        },
+        {
+            "id": 8814,
+            "settled": false
+        },
+        {
+            "id": 9215,
+            "settled": false
+        },
+        {
+            "id": 9616,
+            "settled": false
+        },
+        {
+            "id": 10017,
+            "settled": false
+        },
+        {
+            "id": 10418,
+            "settled": false
+        },
+        {
+            "id": 10819,
+            "settled": false
+        },
+        {
+            "id": 11220,
+            "settled": false
+        },
+        {
+            "id": 12022,
+            "settled": false
+        },
+        {
+            "id": 12423,
+            "settled": false
+        },
+        {
+            "id": 12824,
+            "settled": false
+        },
+        {
+            "id": 5605,
+            "settled": false
+        },
+        {
+            "id": 5607,
+            "settled": false
+        },
+        {
+            "id": 5611,
+            "settled": false
+        },
+        {
+            "id": 5612,
+            "settled": false
+        },
+        {
+            "id": 5614,
+            "settled": false
+        },
+        {
+            "id": 5615,
+            "settled": false
+        },
+        {
+            "id": 5617,
+            "settled": false
+        },
+        {
+            "id": 5618,
+            "settled": false
+        },
+        {
+            "id": 5619,
+            "settled": false
+        },
+        {
+            "id": 5621,
+            "settled": false
+        },
+        {
+            "id": 5623,
+            "settled": false
+        },
+        {
+            "id": 5625,
+            "settled": false
+        },
+        {
+            "id": 13244,
+            "settled": false
+        },
+        {
+            "id": 12041,
+            "settled": false
+        },
+        {
+            "id": 11640,
+            "settled": false
+        },
+        {
+            "id": 11239,
+            "settled": false
+        },
+        {
+            "id": 10838,
+            "settled": false
+        },
+        {
+            "id": 10437,
+            "settled": false
+        },
+        {
+            "id": 10036,
+            "settled": false
+        },
+        {
+            "id": 9635,
+            "settled": false
+        },
+        {
+            "id": 9234,
+            "settled": false
+        },
+        {
+            "id": 8833,
+            "settled": false
+        },
+        {
+            "id": 8432,
+            "settled": false
+        },
+        {
+            "id": 8031,
+            "settled": false
+        },
+        {
+            "id": 7630,
+            "settled": false
+        },
+        {
+            "id": 7229,
+            "settled": false
+        },
+        {
+            "id": 6828,
+            "settled": false
+        },
+        {
+            "id": 6427,
+            "settled": false
+        },
+        {
+            "id": 6026,
+            "settled": false
+        },
+        {
+            "id": 13645,
+            "settled": false
+        },
+        {
+            "id": 13643,
+            "settled": false
+        },
+        {
+            "id": 13642,
+            "settled": false
+        },
+        {
+            "id": 13641,
+            "settled": false
+        },
+        {
+            "id": 13640,
+            "settled": false
+        },
+        {
+            "id": 13639,
+            "settled": false
+        },
+        {
+            "id": 13638,
+            "settled": false
+        },
+        {
+            "id": 13637,
+            "settled": false
+        },
+        {
+            "id": 13636,
+            "settled": false
+        },
+        {
+            "id": 13634,
+            "settled": false
+        },
+        {
+            "id": 13633,
+            "settled": false
+        },
+        {
+            "id": 13632,
+            "settled": false
+        },
+        {
+            "id": 13631,
+            "settled": false
+        },
+        {
+            "id": 13630,
+            "settled": false
+        },
+        {
+            "id": 13629,
+            "settled": false
+        },
+        {
+            "id": 13628,
+            "settled": false
+        },
+        {
+            "id": 13627,
+            "settled": false
+        },
+        {
+            "id": 13626,
+            "settled": false
+        },
+        {
+            "id": 13625,
+            "settled": false
+        },
+        {
+            "id": 6006,
+            "settled": false
+        },
+        {
+            "id": 6407,
+            "settled": false
+        },
+        {
+            "id": 6808,
+            "settled": false
+        },
+        {
+            "id": 7209,
+            "settled": false
+        },
+        {
+            "id": 7610,
+            "settled": false
+        },
+        {
+            "id": 8011,
+            "settled": false
+        },
+        {
+            "id": 8412,
+            "settled": false
+        },
+        {
+            "id": 9214,
+            "settled": false
+        },
+        {
+            "id": 9615,
+            "settled": false
+        },
+        {
+            "id": 10016,
+            "settled": false
+        },
+        {
+            "id": 10417,
+            "settled": false
+        },
+        {
+            "id": 10818,
+            "settled": false
+        },
+        {
+            "id": 11219,
+            "settled": false
+        },
+        {
+            "id": 12021,
+            "settled": false
+        },
+        {
+            "id": 12823,
+            "settled": false
+        },
+        {
+            "id": 13224,
+            "settled": false
+        },
+        {
+            "id": 5203,
+            "settled": false
+        },
+        {
+            "id": 5204,
+            "settled": false
+        },
+        {
+            "id": 5205,
+            "settled": false
+        },
+        {
+            "id": 5206,
+            "settled": false
+        },
+        {
+            "id": 5207,
+            "settled": false
+        },
+        {
+            "id": 5208,
+            "settled": false
+        },
+        {
+            "id": 5209,
+            "settled": false
+        },
+        {
+            "id": 5210,
+            "settled": false
+        },
+        {
+            "id": 5211,
+            "settled": false
+        },
+        {
+            "id": 5212,
+            "settled": false
+        },
+        {
+            "id": 5213,
+            "settled": false
+        },
+        {
+            "id": 5214,
+            "settled": false
+        },
+        {
+            "id": 5215,
+            "settled": false
+        },
+        {
+            "id": 5216,
+            "settled": false
+        },
+        {
+            "id": 5218,
+            "settled": false
+        },
+        {
+            "id": 5219,
+            "settled": false
+        },
+        {
+            "id": 5221,
+            "settled": false
+        },
+        {
+            "id": 5222,
+            "settled": false
+        },
+        {
+            "id": 5223,
+            "settled": false
+        },
+        {
+            "id": 5224,
+            "settled": false
+        },
+        {
+            "id": 5225,
+            "settled": false
+        },
+        {
+            "id": 13646,
+            "settled": false
+        },
+        {
+            "id": 13245,
+            "settled": false
+        },
+        {
+            "id": 12844,
+            "settled": false
+        },
+        {
+            "id": 12443,
+            "settled": false
+        },
+        {
+            "id": 12042,
+            "settled": false
+        },
+        {
+            "id": 11641,
+            "settled": false
+        },
+        {
+            "id": 11240,
+            "settled": false
+        },
+        {
+            "id": 10839,
+            "settled": false
+        },
+        {
+            "id": 10438,
+            "settled": false
+        },
+        {
+            "id": 10037,
+            "settled": false
+        },
+        {
+            "id": 9235,
+            "settled": false
+        },
+        {
+            "id": 8834,
+            "settled": false
+        },
+        {
+            "id": 8433,
+            "settled": false
+        },
+        {
+            "id": 8032,
+            "settled": false
+        },
+        {
+            "id": 7631,
+            "settled": false
+        },
+        {
+            "id": 7230,
+            "settled": false
+        },
+        {
+            "id": 6829,
+            "settled": false
+        },
+        {
+            "id": 6428,
+            "settled": false
+        },
+        {
+            "id": 5626,
+            "settled": false
+        },
+        {
+            "id": 14047,
+            "settled": false
+        },
+        {
+            "id": 14046,
+            "settled": false
+        },
+        {
+            "id": 14045,
+            "settled": false
+        },
+        {
+            "id": 14044,
+            "settled": false
+        },
+        {
+            "id": 14043,
+            "settled": false
+        },
+        {
+            "id": 14042,
+            "settled": false
+        },
+        {
+            "id": 14040,
+            "settled": false
+        },
+        {
+            "id": 14039,
+            "settled": false
+        },
+        {
+            "id": 14038,
+            "settled": false
+        },
+        {
+            "id": 14037,
+            "settled": false
+        },
+        {
+            "id": 14036,
+            "settled": false
+        },
+        {
+            "id": 14035,
+            "settled": false
+        },
+        {
+            "id": 14034,
+            "settled": false
+        },
+        {
+            "id": 14033,
+            "settled": false
+        },
+        {
+            "id": 14032,
+            "settled": false
+        }
+    ]
+}
