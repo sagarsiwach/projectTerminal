@@ -1,202 +1,292 @@
 {
-    "username": "scar",
-    "password": "satkabir",
-    "productionLoops": 10000,
-    "storageLoops": 10000,
-    "celebrationLoops": 10000,
-    "building": [
+  "username": "scar",
+  "password": "satkabir",
+  "productionLoops": 10000,
+  "storageLoops": 10000,
+  "celebrationLoops": 10000,
+  "building": [
+    {
+      "type": "capital",
+      "construction": [
         {
-            "type": "capital",
-            "construction": [
-                {
-                    "pid": 26,
-                    "bid": 15,
-                    "loop": 20
-                },
-                {
-                    "pid": 39,
-                    "bid": 16,
-                    "loop": 20
-                },
-                {
-                    "pid": 40,
-                    "bid": 33,
-                    "loop": 20
-                },
-                {
-                    "pid": 25,
-                    "bid": 19,
-                    "loop": 20
-                },
-                {
-                    "pid": 33,
-                    "bid": 22,
-                    "loop": 20
-                },
-                {
-                    "pid": 30,
-                    "bid": 25,
-                    "loop": 20
-                },
-                {
-                    "pid": 29,
-                    "bid": 13,
-                    "loop": 20
-                },
-                {
-                    "pid": 21,
-                    "bid": 12,
-                    "loop": 20
-                },
-                {
-                    "pid": 34,
-                    "bid": 7,
-                    "loop": 10
-                },
-                {
-                    "pid": 31,
-                    "bid": 5,
-                    "loop": 10
-                },
-                {
-                    "pid": 27,
-                    "bid": 6,
-                    "loop": 10
-                },
-                {
-                    "pid": 24,
-                    "bid": 37,
-                    "loop": 20
-                },
-                {
-                    "pid": 23,
-                    "bid": 44,
-                    "loop": 1
-                },
-                {
-                    "pid": 22,
-                    "bid": 11,
-                    "loop": 20
-                },
-                {
-                    "pid": 20,
-                    "bid": 17,
-                    "loop": 20
-                },
-                {
-                    "pid": 19,
-                    "bid": 20,
-                    "loop": 20
-                },
-                {
-                    "pid": 28,
-                    "bid": 21,
-                    "loop": 20
-                },
-                {
-                    "pid": 32,
-                    "bid": 14,
-                    "loop": 20
-                },
-                {
-                    "pid": 35,
-                    "bid": 24,
-                    "loop": 20
-                },
-                {
-                    "pid": 38,
-                    "bid": 18,
-                    "loop": 20
-                },
-                {
-                    "pid": 37,
-                    "bid": 27,
-                    "loop": 20
-                }
-            ]
+          "pid": 26,
+          "bid": 15,
+          "loop": 20
         },
         {
-            "type": "secondary",
-            "construction": [
-                {
-                    "pid": 26,
-                    "bid": 15,
-                    "loop": 10
-                },
-                {
-                    "pid": 39,
-                    "bid": 16,
-                    "loop": 10
-                },
-                {
-                    "pid": 30,
-                    "bid": 25,
-                    "loop": 20
-                },
-                {
-                    "pid": 24,
-                    "bid": 44,
-                    "loop": 1
-                }
-            ]
+          "pid": 39,
+          "bid": 16,
+          "loop": 20
         },
         {
-            "type": "artefact",
-            "construction": [
-                {
-                    "pid": 26,
-                    "bid": 15,
-                    "loop": 20
-                },
-                {
-                    "pid": 39,
-                    "bid": 16,
-                    "loop": 20
-                },
-                {
-                    "pid": 30,
-                    "bid": 25,
-                    "loop": 20
-                },
-                {
-                    "pid": 24,
-                    "bid": 44,
-                    "loop": 1
-                },
-                {
-                    "pid": 25,
-                    "bid": 19,
-                    "loop": 20
-                },
-                {
-                    "pid": 33,
-                    "bid": 22,
-                    "loop": 20
-                },
-                {
-                    "pid": 37,
-                    "bid": 27,
-                    "loop": 20
-                }
-            ]
+          "pid": 40,
+          "bid": 33,
+          "loop": 20
+        },
+        {
+          "pid": 25,
+          "bid": 19,
+          "loop": 20
+        },
+        {
+          "pid": 33,
+          "bid": 22,
+          "loop": 20
+        },
+        {
+          "pid": 30,
+          "bid": 25,
+          "loop": 20
+        },
+        {
+          "pid": 29,
+          "bid": 13,
+          "loop": 20
+        },
+        {
+          "pid": 21,
+          "bid": 12,
+          "loop": 20
+        },
+        {
+          "pid": 34,
+          "bid": 7,
+          "loop": 10
+        },
+        {
+          "pid": 31,
+          "bid": 5,
+          "loop": 10
+        },
+        {
+          "pid": 27,
+          "bid": 6,
+          "loop": 10
+        },
+        {
+          "pid": 24,
+          "bid": 37,
+          "loop": 20
+        },
+        {
+          "pid": 23,
+          "bid": 44,
+          "loop": 1
+        },
+        {
+          "pid": 22,
+          "bid": 11,
+          "loop": 20
+        },
+        {
+          "pid": 20,
+          "bid": 17,
+          "loop": 20
+        },
+        {
+          "pid": 19,
+          "bid": 20,
+          "loop": 20
+        },
+        {
+          "pid": 28,
+          "bid": 21,
+          "loop": 20
+        },
+        {
+          "pid": 32,
+          "bid": 14,
+          "loop": 20
+        },
+        {
+          "pid": 35,
+          "bid": 24,
+          "loop": 20
+        },
+        {
+          "pid": 38,
+          "bid": 18,
+          "loop": 20
+        },
+        {
+          "pid": 37,
+          "bid": 27,
+          "loop": 20
         }
-    ],
-    "villages": {
-        "residenceID": "30",
-        "settlerID": "10",
-        "villages": [
-            {
-                "id": 0,
-                "villageID": 9631,
-                "villageName": "Village DRAVAZ",
-                "villageType": "capital"
-            },
-            {
-                "id": 1,
-                "villageID": 9230,
-                "villageName": "New village",
-                "villageType": "artefact"
-            }
-        ]
+      ]
+    },
+    {
+      "type": "secondary",
+      "construction": [
+        {
+          "pid": 1,
+          "bid": 1,
+          "loop": 30
+        },
+        {
+          "pid": 2,
+          "bid": 2,
+          "loop": 30
+        },
+        {
+          "pid": 3,
+          "bid": 3,
+          "loop": 30
+        },
+        {
+          "pid": 4,
+          "bid": 4,
+          "loop": 30
+        },
+        {
+          "pid": 5,
+          "bid": 5,
+          "loop": 30
+        },
+        {
+          "pid": 6,
+          "bid": 6,
+          "loop": 30
+        },
+        {
+          "pid": 7,
+          "bid": 7,
+          "loop": 30
+        },
+        {
+          "pid": 8,
+          "bid": 8,
+          "loop": 30
+        },
+        {
+          "pid": 9,
+          "bid": 9,
+          "loop": 30
+        },
+        {
+          "pid": 10,
+          "bid": 10,
+          "loop": 30
+        },
+        {
+          "pid": 11,
+          "bid": 11,
+          "loop": 30
+        },
+        {
+          "pid": 12,
+          "bid": 12,
+          "loop": 30
+        },
+        {
+          "pid": 13,
+          "bid": 13,
+          "loop": 30
+        },
+        {
+          "pid": 14,
+          "bid": 14,
+          "loop": 30
+        },
+        {
+          "pid": 15,
+          "bid": 15,
+          "loop": 30
+        },
+        {
+          "pid": 16,
+          "bid": 16,
+          "loop": 30
+        },
+        {
+          "pid": 17,
+          "bid": 17,
+          "loop": 30
+        },
+        {
+          "pid": 18,
+          "bid": 18,
+          "loop": 30
+        },
+        {
+          "pid": 26,
+          "bid": 15,
+          "loop": 10
+        },
+        {
+          "pid": 39,
+          "bid": 16,
+          "loop": 10
+        },
+        {
+          "pid": 30,
+          "bid": 25,
+          "loop": 20
+        },
+        {
+          "pid": 24,
+          "bid": 44,
+          "loop": 1
+        }
+      ]
+    },
+    {
+      "type": "artefact",
+      "construction": [
+        {
+          "pid": 26,
+          "bid": 15,
+          "loop": 20
+        },
+        {
+          "pid": 39,
+          "bid": 16,
+          "loop": 20
+        },
+        {
+          "pid": 30,
+          "bid": 25,
+          "loop": 20
+        },
+        {
+          "pid": 24,
+          "bid": 44,
+          "loop": 1
+        },
+        {
+          "pid": 25,
+          "bid": 19,
+          "loop": 20
+        },
+        {
+          "pid": 33,
+          "bid": 22,
+          "loop": 20
+        },
+        {
+          "pid": 37,
+          "bid": 27,
+          "loop": 20
+        }
+      ]
     }
+  ],
+  "villages": {
+    "residenceID": "30",
+    "settlerID": "10",
+    "villages": [
+      {
+        "id": 0,
+        "villageID": 9631,
+        "villageName": "Village DRAVAZ",
+        "villageType": "capital"
+      },
+      {
+        "id": 1,
+        "villageID": 9230,
+        "villageName": "New village",
+        "villageType": "artefact"
+      }
+    ]
+  }
 }

@@ -13,6 +13,22 @@ config = read_config()
 # Base URL for the game
 base_url = "https://fun.gotravspeed.com"
 
+async def build_or_upgrade_resource(cookies, village_id=0, position_id, loop):
+    async with httpx.AsyncClient(cookies=cookies) as client:
+        for _ in range(loop):
+            # Send a GET request to the specific position URL to retrieve the CSRF token
+            position_response = await client.get(f"https://fun.gotravspeed.com/build.php?id={position_id}")
+            position_soup = BeautifulSoup(position_response.text, "html.parser")
+            csrf_token = position_soup.find("a", {"class": "build"})["href"].split("&k=")[1]
+
+            # Send a GET request to upgrade the building or field
+            upgrade_response = await client.get(f"https://fun.gotravspeed.com/village2.php?id={position_id}&k={csrf_token}")
+            if upgrade_response.status_code == 200:
+                logging.info(f"Successfully upgraded resource at position {position_id}")
+            else:
+                logging.error(f"Failed to upgrade resource at position {position_id}. Status code: {upgrade_response.status_code}")
+
+
 async def construct_and_upgrade_building(cookies, village_id, building_id, loops):
     async with httpx.AsyncClient(cookies=cookies) as client:
         for _ in range(loops):
@@ -122,8 +138,8 @@ async def switch_village(cookies, village_id):
         else:
             logging.error(f"Failed to switch to village ID {village_id}")
 
-async def construct_capital(cookies, village_id):
-    await switch_village(cookies, village_id)
+async def construct_capital(cookies):
+    # await switch_village(cookies, village_id)
     capital_data = next((item for item in config["building"] if item["type"] == "capital"), None)
     if capital_data is None:
         logging.error("Capital data not found in config")
@@ -133,15 +149,19 @@ async def construct_capital(cookies, village_id):
         pid = building["pid"]
         bid = building["bid"]
         loop = building["loop"]
-        await construct_and_upgrade_building(cookies, village_id=pid, building_id=bid, loops=loop)
+        if bid <= 18:  # Resource fields
+            await build_or_upgrade_resource(cookies, position_id=pid, loop=loop)
+        else:  # Other buildings
+            await construct_and_upgrade_building(cookies, village_id=pid, building_id=bid, loops=loop)
 
-        if bid in [13, 12, 33]:  # Armory, Smithy, Academy
-            if bid == 13:
-                await upgrade_armory(cookies)
-            elif bid == 12:
-                await upgrade_smithy(cookies)
-            elif bid == 33:
-                await research_academy(cookies)
+            if bid in [13, 12, 33]:  # Armory, Smithy, Academy
+                if bid == 13:
+                    await upgrade_armory(cookies)
+                elif bid == 12:
+                    await upgrade_smithy(cookies)
+                elif bid == 33:
+                    await research_academy(cookies)
+
 
 async def construct_artefact(cookies, village_id):
     await switch_village(cookies, village_id)
