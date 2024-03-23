@@ -13,7 +13,7 @@ config = read_config()
 # Base URL for the game
 base_url = "https://fun.gotravspeed.com"
 
-async def build_or_upgrade_resource(cookies, village_id=0, position_id, loop):
+async def build_or_upgrade_resource(cookies, position_id, loop):
     async with httpx.AsyncClient(cookies=cookies) as client:
         for _ in range(loop):
             # Send a GET request to the specific position URL to retrieve the CSRF token
