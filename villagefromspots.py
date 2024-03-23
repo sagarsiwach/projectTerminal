@@ -134,6 +134,11 @@ async def send_settlers_and_handle_popup(cookies, new_village_id):
         })
         if response.status_code == 200:
             logging.info(f"Settlers sent to new village at {new_village_id}")
+            # Update settlements.json to mark the village as settled
+            settlements = load_settlements()
+            settlements.append({'id': new_village_id, 'settled': True})
+            save_settlements(settlements)
+
             # Wait for 2 seconds before checking for the new village popup
             await asyncio.sleep(2)
 

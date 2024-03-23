@@ -144,14 +144,9 @@ async def switch_village(cookies, village_id):
         else:
             logging.error(f"Failed to switch to village ID {village_id}")
 
-async def construct_capital(cookies):
-    # await switch_village(cookies, village_id)
-    capital_data = next((item for item in config["building"] if item["type"] == "capital"), None)
-    if capital_data is None:
-        logging.error("Capital data not found in config")
-        return
-
-    for building in capital_data["construction"]:
+async def construct_capital(cookies, village_id, building_config):
+    await switch_village(cookies, village_id)
+    for building in building_config["construction"]:
         pid = building["pid"]
         bid = building["bid"]
         loop = building["loop"]
@@ -160,36 +155,17 @@ async def construct_capital(cookies):
         else:  # Other buildings
             await construct_and_upgrade_building(cookies, village_id=pid, building_id=bid, loops=loop)
 
-            if bid in [13, 12, 33]:  # Armory, Smithy, Academy
-                if bid == 13:
-                    await upgrade_armory(cookies)
-                elif bid == 12:
-                    await upgrade_smithy(cookies)
-                elif bid == 33:
-                    await research_academy(cookies)
-
-
-async def construct_artefact(cookies, village_id):
+async def construct_artefact(cookies, village_id, building_config):
     await switch_village(cookies, village_id)
-    artefact_data = next((item for item in config["building"] if item["type"] == "artefact"), None)
-    if artefact_data is None:
-        logging.error("Artefact data not found in config")
-        return
-
-    for building in artefact_data["construction"]:
+    for building in building_config["construction"]:
         pid = building["pid"]
         bid = building["bid"]
         loop = building["loop"]
         await construct_and_upgrade_building(cookies, village_id=pid, building_id=bid, loops=loop)
 
-async def construct_secondary(cookies, village_id):
+async def construct_secondary(cookies, village_id, building_config):
     await switch_village(cookies, village_id)
-    secondary_data = next((item for item in config["building"] if item["type"] == "secondary"), None)
-    if secondary_data is None:
-        logging.error("Secondary data not found in config")
-        return
-
-    for building in secondary_data["construction"]:
+    for building in building_config["construction"]:
         pid = building["pid"]
         bid = building["bid"]
         loop = building["loop"]
