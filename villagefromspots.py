@@ -1,20 +1,30 @@
 import httpx
 from bs4 import BeautifulSoup
 from config import read_config, write_config
+from building import construct_secondary, construct_capital, construct_artefact
 from login import login
 import logging
 import json
 import asyncio
+
+
+def load_settlements():
+    try:
+        with open('settlements.json', 'r') as file:
+            data = json.load(file)
+            return [village['id'] for village in data['villages'] if not village['settled']]
+    except FileNotFoundError:
+        return []
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Load configuration and potential village IDs
 config = read_config()
-potential_village_ids = json.load(open('potential_villages.json'))
 
 # Extract global variables from configuration
-MAX_VILLAGES = config["global"]["maxVillages"]
+MAX_VILLAGES = config["maxVillages"]
 residence_id = config["villages"]["residenceID"]
 settler_id = config["villages"]["settlerID"]
 
@@ -24,63 +34,51 @@ async def rename_latest_village(cookies):
         village_id = latest_village["villageID"]
         expected_name = latest_village["villageName"]
 
-        # Navigate to the latest village
-        await client.get(f"https://fun.gotravspeed.com/village2.php?vid={village_id}")
-
         # Navigate to the profile settings page
-        await client.get("https://fun.gotravspeed.com/profile.php?t=1")
+        await client.get(f"https://fun.gotravspeed.com/dorf1.php?newdid={village_id}&e=1")
 
         # Prepare the form data for renaming the village
         form_data = {
-            'e': '1',
-            'oldavatar': '',
-            'jahr': '',
-            'monat': '0',
-            'tag': '',
-            'be1': '',
-            'mw': '0',
-            'ort': '',
-            'dname': expected_name,
-            'be2': '',
-            's1.x': '26',
-            's1.y': '16'
+            'name': expected_name,
+            's1': 'ok'
         }
 
         # Send the POST request to rename the village
-        rename_response = await client.post("https://fun.gotravspeed.com/profile.php", data=form_data)
+        rename_response = await client.post(f"https://fun.gotravspeed.com/dorf1.php?newdid={village_id}&e=1", data=form_data)
         if rename_response.status_code == 200:
-            logging.info(f"Renamed latest village to {expected_name}")
+            logging.info(f"Renamed village ID {village_id} to {expected_name}")
         else:
-            logging.error(f"Failed to rename latest village to {expected_name}")
+            logging.error(f"Failed to rename village ID {village_id} to {expected_name}")
+
+
 
 async def get_village_ids_and_update_json(cookies):
     async with httpx.AsyncClient(cookies=cookies) as client:
         response = await client.get("https://fun.gotravspeed.com/profile.php")
         soup = BeautifulSoup(response.text, 'html.parser')
         village_rows = soup.find('table', id='villages').find_all('tr')[1:]  # Skip the header row
-        print(f"Number of village rows: {len(village_rows)}")  # Debugging
 
         village_data = []
-        village_count = 0  # Counter for the number of villages processed
         for row in village_rows:
             cells = row.find_all('td')
             village_link = cells[0].find('a')
             if village_link:
                 village_id = village_link['href'].split('=')[-1]
                 village_name = village_link.text.strip()
+
+                # Determine the village type based on the index in the list
                 village_type = "secondary"
-                if village_count == 0:
+                if len(village_data) == 0:
                     village_type = "capital"
-                elif 1 <= village_count <= 10:
+                elif 1 <= len(village_data) <= 10:
                     village_type = "artefact"
 
                 village_data.append({
-                    "id": village_count,
+                    "id": len(village_data),
                     "villageID": int(village_id),
                     "villageName": village_name,
                     "villageType": village_type
                 })
-                village_count += 1  # Increment the counter
 
         # Update the configuration with the village information
         config["villages"]["villages"] = village_data
@@ -89,6 +87,7 @@ async def get_village_ids_and_update_json(cookies):
         # Print the updated configuration
         print("Updated configuration:")
         print(json.dumps(config, indent=4))
+
 
 
 async def train_settlers(cookies, village_id, residence_id, settler_id):
@@ -111,8 +110,9 @@ async def train_settlers(cookies, village_id, residence_id, settler_id):
         logging.info(f"Training settlers in village ID {village_id}")
 
 async def find_empty_village_spot(cookies):
+    unsettled_village_ids = load_settlements()
     async with httpx.AsyncClient(cookies=cookies) as client:
-        for village_id in potential_village_ids:
+        for village_id in unsettled_village_ids:
             response = await client.get(f"https://fun.gotravspeed.com/village3.php?id={village_id}")
             if '»building a new village' in response.text:
                 return village_id
@@ -186,12 +186,18 @@ async def main():
         village_type = latest_village.get("villageType", "secondary")
 
         try:
+            # Find the building configuration for the current village type
+            building_config = next((item for item in config["building"] if item["type"] == village_type), None)
+            if building_config is None:
+                logging.error(f"Building configuration for {village_type} not found")
+                continue  # Skip to the next iteration if configuration not found
+
             if village_type == "capital":
-                await construct_capital(cookies, latest_village["villageID"], config["buildings"]["capital"])
+                await construct_capital(cookies, latest_village["villageID"], building_config)
             elif village_type == "artefact":
-                await construct_artefact(cookies, latest_village["villageID"], config["buildings"]["artefact"])
+                await construct_artefact(cookies, latest_village["villageID"], building_config)
             else:
-                await construct_secondary(cookies, latest_village["villageID"], config["buildings"]["secondary"])
+                await construct_secondary(cookies, latest_village["villageID"], building_config)
 
             await train_settlers(cookies, latest_village["villageID"], residence_id, settler_id)
             await expand_village(cookies)

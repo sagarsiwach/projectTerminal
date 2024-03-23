@@ -23,7 +23,7 @@ async def build_or_upgrade_resource(cookies, position_id, loop, village_id=0):
 
             if build_link is None:
                 logging.warning(f"No upgrade link found for resource at position {position_id}. Skipping...")
-                continue  # Skip the current iteration and continue with the next one
+                break  # Skip the current iteration and continue with the next one
 
             csrf_token = build_link["href"].split("&k=")[1]
 
