@@ -2,6 +2,7 @@
   "username": "scar",
   "password": "satkabir",
   "productionLoops": 10000,
+  "maxVillages": 500,
   "storageLoops": 10000,
   "celebrationLoops": 10000,
   "building": [

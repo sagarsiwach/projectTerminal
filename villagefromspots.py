@@ -4,21 +4,17 @@ from config import read_config, write_config
 from login import login
 import logging
 import json
-from building import construct_capital, construct_artefact, construct_secondary
 import asyncio
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Read configuration from config.json
-config = read_config()  # Assuming you have a function to read the JSON configuration
-existing_villages_count = len(config["villages"]["villages"])
-print(f"Existing villages count: {existing_villages_count}")
+# Load configuration and potential village IDs
+config = read_config()
+potential_village_ids = json.load(open('potential_villages.json'))
 
-# Global variable for maximum number of villages needed
-MAX_VILLAGES = 500  # Adjust as needed
-
-# Extract residence and settler IDs from the configuration
+# Extract global variables from configuration
+MAX_VILLAGES = config["global"]["maxVillages"]
 residence_id = config["villages"]["residenceID"]
 settler_id = config["villages"]["settlerID"]
 
@@ -56,7 +52,6 @@ async def rename_latest_village(cookies):
             logging.info(f"Renamed latest village to {expected_name}")
         else:
             logging.error(f"Failed to rename latest village to {expected_name}")
-
 
 async def get_village_ids_and_update_json(cookies):
     async with httpx.AsyncClient(cookies=cookies) as client:
@@ -96,28 +91,6 @@ async def get_village_ids_and_update_json(cookies):
         print(json.dumps(config, indent=4))
 
 
-# Function to generate spiral village IDs
-# Function to generate spiral village IDs with initial skip
-def generate_spiral_village_ids(center_id, existing_villages_count, max_radius=25):
-    radius = 1
-    ids = []
-
-    while radius <= max_radius:
-        for i in range(-radius, radius + 1):
-            ids.append(center_id - 401 * radius + i)
-        for i in range(-radius + 1, radius):
-            ids.append(center_id - 401 * i + radius)
-        for i in range(-radius, radius + 1):
-            ids.append(center_id + 401 * radius - i)
-        for i in range(-radius + 1, radius):
-            ids.append(center_id + 401 * i - radius)
-        radius += 1
-
-    # Skip the initial villages based on the existing villages count
-    return ids[existing_villages_count:]
-
-
-
 async def train_settlers(cookies, village_id, residence_id, settler_id):
     async with httpx.AsyncClient(cookies=cookies) as client:
         response = await client.get(f"https://fun.gotravspeed.com/build.php?id={residence_id}")
@@ -137,18 +110,15 @@ async def train_settlers(cookies, village_id, residence_id, settler_id):
 
         logging.info(f"Training settlers in village ID {village_id}")
 
-async def find_empty_village_spot(cookies, center_id, radius, existing_villages):
-    spiral_village_ids = generate_spiral_village_ids(center_id, radius)
+async def find_empty_village_spot(cookies):
     async with httpx.AsyncClient(cookies=cookies) as client:
-        for village_id in spiral_village_ids:
-            if village_id not in existing_villages:
-                response = await client.get(f"https://fun.gotravspeed.com/village3.php?id={village_id}")
-                if '»building a new village' in response.text:
-                    await send_settlers_to_new_village(cookies, village_id)
-                    return village_id
+        for village_id in potential_village_ids:
+            response = await client.get(f"https://fun.gotravspeed.com/village3.php?id={village_id}")
+            if '»building a new village' in response.text:
+                return village_id
     return None
 
-async def send_settlers_to_new_village(cookies, new_village_id):
+async def send_settlers_and_handle_popup(cookies, new_village_id):
     async with httpx.AsyncClient(cookies=cookies) as client:
         # Fetch the v2v.php page to extract the key
         response = await client.get(f"https://fun.gotravspeed.com/v2v.php?id={new_village_id}")
@@ -164,81 +134,67 @@ async def send_settlers_to_new_village(cookies, new_village_id):
         })
         if response.status_code == 200:
             logging.info(f"Settlers sent to new village at {new_village_id}")
-            return True
+            # Wait for 2 seconds before checking for the new village popup
+            await asyncio.sleep(2)
+
+            # Check for the new village popup and handle it
+            response = await client.get(f"https://fun.gotravspeed.com/village1.php?id={new_village_id}")
+            if response.status_code == 302 and response.headers.get('location') == 'shownvill.php':
+                # Navigate to shownvill.php to acknowledge the new village
+                await client.get("https://fun.gotravspeed.com/shownvill.php")
+                logging.info("New village popup handled.")
+                # Wait for 1 second before continuing
+                await asyncio.sleep(1)
+                # Navigate to village1.php again to ensure the popup is handled
+                await client.get(f"https://fun.gotravspeed.com/village1.php?id={new_village_id}")
+                return True
+            elif "New village founded!" in response.text:
+                logging.info("New village popup handled.")
+                return True
+            else:
+                logging.error("Failed to handle new village popup.")
+                return False
         else:
             logging.error(f"Failed to send settlers to new village at {new_village_id}")
             return False
 
-async def handle_new_village_popup(cookies, village_id):
-    async with httpx.AsyncClient(cookies=cookies) as client:
-        response = await client.get(f"https://fun.gotravspeed.com/village1.php?id={village_id}")
-        if response.status_code == 302 and response.headers.get('location') == 'shownvill.php':
-            # Navigate to shownvill.php to acknowledge the new village
-            await client.get("https://fun.gotravspeed.com/shownvill.php")
-            logging.info("New village popup handled.")
-            return True
-        elif "New village founded!" in response.text:
-            logging.info("New village popup handled.")
-            return True
-        else:
-            logging.error("Failed to handle new village popup.")
-            return False
 
-
-async def expand_village(cookies, center_id, radius, existing_villages):
-    new_village_id = await find_empty_village_spot(cookies, center_id, radius, existing_villages)
+async def expand_village(cookies):
+    new_village_id = await find_empty_village_spot(cookies)
     if new_village_id:
-        if await send_settlers_to_new_village(cookies, new_village_id):
-            logging.info("Settlers sent to new village.")
-            # Wait a bit and then navigate to village1.php twice
-            await asyncio.sleep(2)
-            async with httpx.AsyncClient(cookies=cookies) as client:
-                await client.get(f"https://fun.gotravspeed.com/shownvill.php")
-                await asyncio.sleep(1)
-                await client.get(f"https://fun.gotravspeed.com/village1.php")
+        if await send_settlers_and_handle_popup(cookies, new_village_id):  # Updated this line
+            logging.info("Settlers sent to new village and popup handled.")
         else:
-            logging.error("Expansion failed at sending settlers.")
+            logging.error("Expansion failed at sending settlers or handling popup.")
     else:
         logging.error("Expansion failed at finding empty village spot.")
 
-def extract_key_from_v2v_page(html_content):
-    soup = BeautifulSoup(html_content, 'html.parser')
-    key_input = soup.find('input', {'name': 'key'})
-    if key_input:
-        return key_input.get('value')
-    return None
-
 
 async def main():
-    cookies = await login()  # Assuming you have a login function
+    cookies = await login()
 
     while len(config["villages"]["villages"]) < MAX_VILLAGES:
         await get_village_ids_and_update_json(cookies)
         await rename_latest_village(cookies)
 
         latest_village = config["villages"]["villages"][-1]
+        village_type = latest_village.get("villageType", "secondary")
+
         try:
-            if latest_village["id"] == 0:
-                await construct_capital(cookies, latest_village["villageID"])
-            elif 1 <= latest_village["id"] <= 10:
-                await construct_artefact(cookies, latest_village["villageID"])
+            if village_type == "capital":
+                await construct_capital(cookies, latest_village["villageID"], config["buildings"]["capital"])
+            elif village_type == "artefact":
+                await construct_artefact(cookies, latest_village["villageID"], config["buildings"]["artefact"])
             else:
-                await construct_secondary(cookies, latest_village["villageID"])
+                await construct_secondary(cookies, latest_village["villageID"], config["buildings"]["secondary"])
 
             await train_settlers(cookies, latest_village["villageID"], residence_id, settler_id)
-
-            center_id = config["villages"]["villages"][0]["villageID"]  # Assuming the first village is the capital
-            radius = 1  # You can adjust this as needed
-            existing_villages = [v["villageID"] for v in config["villages"]["villages"]]
-            await expand_village(cookies, center_id, radius, existing_villages)
+            await expand_village(cookies)
         except httpx.ReadTimeout:
-            logging.warning(f"ReadTimeout occurred while processing village ID {latest_village['villageID']}. Moving on to the next village.")
+            logging.warning(f"ReadTimeout occurred while processing village ID {latest_village['villageID']}.")
         except httpx.ConnectTimeout:
-            logging.warning(f"ConnectTimeout occurred while processing village ID {latest_village['villageID']}. Retrying in 1 second...")
-            await asyncio.sleep(1)
-            continue  # Retry the current village
+            logging.warning(f"ConnectTimeout occurred while processing village ID {latest_village['villageID']}.")
 
-        # Wait a bit before starting the next iteration
         await asyncio.sleep(1)
 
 if __name__ == "__main__":

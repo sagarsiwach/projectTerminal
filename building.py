@@ -35,7 +35,6 @@ async def build_or_upgrade_resource(cookies, position_id, loop, village_id=0):
                 logging.error(f"Failed to upgrade resource at position {position_id}. Status code: {upgrade_response.status_code}")
 
 
-
 async def construct_and_upgrade_building(cookies, village_id, building_id, loops):
     async with httpx.AsyncClient(cookies=cookies) as client:
         for _ in range(loops):

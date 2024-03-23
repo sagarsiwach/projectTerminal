@@ -109,6 +109,7 @@ async def start_large_celebration(loop_count, cookies):
                     logger.info("Large Celebration Started")
                 else:
                     logger.error("Failed to parse celebration key")
+                    continue
             except Exception as e:
                 logger.error(f"Error during large celebration: {e}")
 
