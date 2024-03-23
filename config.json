@@ -9,6 +9,96 @@
       "type": "capital",
       "construction": [
         {
+          "pid": 1,
+          "bid": 1,
+          "loop": 30
+        },
+        {
+          "pid": 2,
+          "bid": 2,
+          "loop": 30
+        },
+        {
+          "pid": 3,
+          "bid": 3,
+          "loop": 30
+        },
+        {
+          "pid": 4,
+          "bid": 4,
+          "loop": 30
+        },
+        {
+          "pid": 5,
+          "bid": 5,
+          "loop": 30
+        },
+        {
+          "pid": 6,
+          "bid": 6,
+          "loop": 30
+        },
+        {
+          "pid": 7,
+          "bid": 7,
+          "loop": 30
+        },
+        {
+          "pid": 8,
+          "bid": 8,
+          "loop": 30
+        },
+        {
+          "pid": 9,
+          "bid": 9,
+          "loop": 30
+        },
+        {
+          "pid": 10,
+          "bid": 10,
+          "loop": 30
+        },
+        {
+          "pid": 11,
+          "bid": 11,
+          "loop": 30
+        },
+        {
+          "pid": 12,
+          "bid": 12,
+          "loop": 30
+        },
+        {
+          "pid": 13,
+          "bid": 13,
+          "loop": 30
+        },
+        {
+          "pid": 14,
+          "bid": 14,
+          "loop": 30
+        },
+        {
+          "pid": 15,
+          "bid": 15,
+          "loop": 30
+        },
+        {
+          "pid": 16,
+          "bid": 16,
+          "loop": 30
+        },
+        {
+          "pid": 17,
+          "bid": 17,
+          "loop": 30
+        },
+        {
+          "pid": 18,
+          "bid": 18,
+          "loop": 30
+        },
+        {
           "pid": 26,
           "bid": 15,
           "loop": 20
@@ -118,96 +208,6 @@
     {
       "type": "secondary",
       "construction": [
-        {
-          "pid": 1,
-          "bid": 1,
-          "loop": 30
-        },
-        {
-          "pid": 2,
-          "bid": 2,
-          "loop": 30
-        },
-        {
-          "pid": 3,
-          "bid": 3,
-          "loop": 30
-        },
-        {
-          "pid": 4,
-          "bid": 4,
-          "loop": 30
-        },
-        {
-          "pid": 5,
-          "bid": 5,
-          "loop": 30
-        },
-        {
-          "pid": 6,
-          "bid": 6,
-          "loop": 30
-        },
-        {
-          "pid": 7,
-          "bid": 7,
-          "loop": 30
-        },
-        {
-          "pid": 8,
-          "bid": 8,
-          "loop": 30
-        },
-        {
-          "pid": 9,
-          "bid": 9,
-          "loop": 30
-        },
-        {
-          "pid": 10,
-          "bid": 10,
-          "loop": 30
-        },
-        {
-          "pid": 11,
-          "bid": 11,
-          "loop": 30
-        },
-        {
-          "pid": 12,
-          "bid": 12,
-          "loop": 30
-        },
-        {
-          "pid": 13,
-          "bid": 13,
-          "loop": 30
-        },
-        {
-          "pid": 14,
-          "bid": 14,
-          "loop": 30
-        },
-        {
-          "pid": 15,
-          "bid": 15,
-          "loop": 30
-        },
-        {
-          "pid": 16,
-          "bid": 16,
-          "loop": 30
-        },
-        {
-          "pid": 17,
-          "bid": 17,
-          "loop": 30
-        },
-        {
-          "pid": 18,
-          "bid": 18,
-          "loop": 30
-        },
         {
           "pid": 26,
           "bid": 15,
