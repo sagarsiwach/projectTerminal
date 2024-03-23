@@ -13,13 +13,19 @@ config = read_config()
 # Base URL for the game
 base_url = "https://fun.gotravspeed.com"
 
-async def build_or_upgrade_resource(cookies, position_id, loop):
+async def build_or_upgrade_resource(cookies, position_id, village_id=0, loop):
     async with httpx.AsyncClient(cookies=cookies) as client:
         for _ in range(loop):
             # Send a GET request to the specific position URL to retrieve the CSRF token
             position_response = await client.get(f"https://fun.gotravspeed.com/build.php?id={position_id}")
             position_soup = BeautifulSoup(position_response.text, "html.parser")
-            csrf_token = position_soup.find("a", {"class": "build"})["href"].split("&k=")[1]
+            build_link = position_soup.find("a", {"class": "build"})
+
+            if build_link is None:
+                logging.warning(f"No upgrade link found for resource at position {position_id}. Skipping...")
+                continue  # Skip the current iteration and continue with the next one
+
+            csrf_token = build_link["href"].split("&k=")[1]
 
             # Send a GET request to upgrade the building or field
             upgrade_response = await client.get(f"https://fun.gotravspeed.com/village2.php?id={position_id}&k={csrf_token}")
@@ -27,6 +33,7 @@ async def build_or_upgrade_resource(cookies, position_id, loop):
                 logging.info(f"Successfully upgraded resource at position {position_id}")
             else:
                 logging.error(f"Failed to upgrade resource at position {position_id}. Status code: {upgrade_response.status_code}")
+
 
 
 async def construct_and_upgrade_building(cookies, village_id, building_id, loops):
