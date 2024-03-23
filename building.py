@@ -156,7 +156,7 @@ async def construct_capital(cookies):
         pid = building["pid"]
         bid = building["bid"]
         loop = building["loop"]
-        if bid <= 18:  # Resource fields
+        if pid <= 18:  # Resource fields
             await build_or_upgrade_resource(cookies, position_id=pid, loop=loop)
         else:  # Other buildings
             await construct_and_upgrade_building(cookies, village_id=pid, building_id=bid, loops=loop)
