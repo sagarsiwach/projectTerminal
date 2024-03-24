@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
@@ -41,22 +41,17 @@ global_village_number = 3  # Used for renaming the secondary villages
 options = Options()
 options.headless = True
 
-# Function to initialize WebDriver
 
-
-# Function to initialize WebDriver
 def initialize_driver():
     global driver
-    firefox_profile = webdriver.FirefoxProfile()
-    # firefox_profile.set_preference('permissions.default.image', 2)
-    options.profile = firefox_profile
-    driver = webdriver.Firefox(options=options)
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")  # This line is important for running on a server
+    chrome_options.add_argument("--disable-dev-shm-usage")  # This line is important for running in a Docker container or on a server
+    driver = webdriver.Chrome(options=chrome_options)
     logging.info("WebDriver initialized")
 
-
 # Function to check internet connection
-
-
 def check_internet_connection():
     while True:
         try:
