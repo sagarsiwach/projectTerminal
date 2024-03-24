@@ -531,7 +531,7 @@ def master_function():
         # Build the secondary village
         build_secondary_village()
         # Find and settle a new village
-        train_settlers_and_find_new_village(9625)  # Pass the driver object here
+        train_settlers_and_find_new_village()  # Pass the driver object here
         # start_celebration(100)  # Uncomment and replace with your function to start celebration
         # If the number of villages reaches the limit, break the loop
         if len(current_village_ids) >= max_villages:
