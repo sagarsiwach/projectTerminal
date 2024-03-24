@@ -397,23 +397,21 @@ def train_settlers_and_find_new_village():
                     WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.ID, "btn_ok"))).click()
                     logging.info("Confirmed new village")
 
-                    # Mark the village as settled in the JSON data
-                    settlement["settled"] = True
-
-                    # Save the updated settlements to the JSON file
-                    with open("settlements.json", "w") as file:
-                        json.dump(settlements, file, indent=4)
-
                     # Wait for the new village popup and handle it
                     try:
-                        WebDriverWait(driver, 5).until(
+                        WebDriverWait(driver, 3).until(
                             EC.visibility_of_element_located((By.XPATH, "//a[contains(text(), '» continue')]"))
                         ).click()
                         logging.info("New village popup handled successfully.")
                     except TimeoutException:
                         logging.error("Timeout waiting for new village popup.")
 
-                    break  # Stop searching once a suitable spot is found
+                # Mark the village as settled in the JSON data regardless of suitability
+                settlement["settled"] = True
+
+        # Save the updated settlements to the JSON file
+        with open("settlements.json", "w") as file:
+            json.dump(settlements, file, indent=4)
 
         logging.info("Finished training settlers and finding a new village")
     except Exception as e:
