@@ -367,70 +367,58 @@ def build_or_upgrade_resource(position_id, loop):
         logging.error(f"Error upgrading resource at position {position_id}: {e}")
 
 
-def train_settlers_and_find_new_village(capital_village_id, start_radius=1, max_radius=25):
+def train_settlers_and_find_new_village():
     try:
+        # Load settlements from JSON file
+        with open("settlements.json", "r") as file:
+            settlements = json.load(file)
 
-        # Train settlers and find a new village
+        # Train settlers
         train_settlers_concurrently()
         logging.info("Training 3 settlers")
         time.sleep(1)  # Add a delay to ensure settlers are trained
-
-        # Function to generate village IDs in a spiral pattern around the capital village
-        def generate_spiral_village_ids(center_id, start_radius, max_radius):
-            ids = []
-            for radius in range(start_radius, max_radius + 1):
-                # Generate IDs in a spiral pattern
-                for i in range(-radius, radius + 1):
-                    ids.append(center_id - 401 * radius + i)
-                for i in range(-radius + 1, radius):
-                    ids.append(center_id - 401 * i + radius)
-                for i in range(-radius, radius + 1):
-                    ids.append(center_id + 401 * radius - i)
-                for i in range(-radius + 1, radius):
-                    ids.append(center_id + 401 * i - radius)
-            return ids
-
-        # Generate village IDs in a spiral pattern around the capital village
-        spiral_village_ids = generate_spiral_village_ids(capital_village_id, start_radius, max_radius)
-        logging.info(f"Generated spiral village IDs around capital village ID {capital_village_id}")
 
         # Navigate to the Map and find a suitable spot for the new village
         driver.get("https://fun.gotravspeed.com/map.php")
         logging.info("Navigated to Map")
 
-        for village_id in spiral_village_ids:
-            driver.get(f"https://fun.gotravspeed.com/village3.php?id={village_id}")
-            logging.info(f"Checking village ID {village_id} for suitability")
-            if "building a new village" in driver.page_source:
-                logging.info(f"Found a suitable spot for a new village at ID {village_id}")
-                build_new_village_link = WebDriverWait(driver, 3).until(
-                    EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'building a new village')]"))
-                )
-                build_new_village_link.click()
-                logging.info("Clicked on 'building a new village'")
-                WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.ID, "btn_ok"))).click()
-                logging.info("Confirmed new village")
-                break  # Stop searching once a suitable spot is found
+        for settlement in settlements["villages"]:
+            village_id = settlement["id"]
+            if not settlement["settled"]:  # Check if the village is not settled
+                driver.get(f"https://fun.gotravspeed.com/village3.php?id={village_id}")
+                logging.info(f"Checking village ID {village_id} for suitability")
+                if "building a new village" in driver.page_source:
+                    logging.info(f"Found a suitable spot for a new village at ID {village_id}")
+                    build_new_village_link = WebDriverWait(driver, 3).until(
+                        EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'building a new village')]"))
+                    )
+                    build_new_village_link.click()
+                    logging.info("Clicked on 'building a new village'")
+                    WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.ID, "btn_ok"))).click()
+                    logging.info("Confirmed new village")
 
-        # Wait for the new village popup and handle it
-        max_attempts = 2
-        attempts = 0
-        while attempts < max_attempts:
-            driver.refresh()  # Refresh the page to check for the popup
-            try:
-                continue_link = WebDriverWait(driver, 3).until(
-                    EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), '» continue')]"))
-                )
-                continue_link.click()
-                logging.info("Clicked on 'Continue' in the new village popup")
-                break  # Exit the loop once the popup is handled
-            except TimeoutException:
-                attempts += 1
-                logging.info(f"Attempt {attempts}/{max_attempts} to find 'Continue' link in new village popup")
+                    # Mark the village as settled in the JSON data
+                    settlement["settled"] = True
+
+                    # Save the updated settlements to the JSON file
+                    with open("settlements.json", "w") as file:
+                        json.dump(settlements, file, indent=4)
+
+                    # Wait for the new village popup and handle it
+                    try:
+                        WebDriverWait(driver, 5).until(
+                            EC.visibility_of_element_located((By.XPATH, "//a[contains(text(), '» continue')]"))
+                        ).click()
+                        logging.info("New village popup handled successfully.")
+                    except TimeoutException:
+                        logging.error("Timeout waiting for new village popup.")
+
+                    break  # Stop searching once a suitable spot is found
 
         logging.info("Finished training settlers and finding a new village")
     except Exception as e:
         logging.error(f"Error during training settlers and finding a new village: {e}")
+
 
 # Function to switch to the 0000 village
 
