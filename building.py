@@ -367,7 +367,7 @@ def build_or_upgrade_resource(position_id, loop):
         logging.error(f"Error upgrading resource at position {position_id}: {e}")
 
 
-def train_settlers_and_find_new_village(capital_village_id, start_radius=11, max_radius=25):
+def train_settlers_and_find_new_village(capital_village_id, start_radius=1, max_radius=25):
     try:
 
         # Train settlers and find a new village
