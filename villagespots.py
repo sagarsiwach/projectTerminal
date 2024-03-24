@@ -9,7 +9,7 @@ from login import login
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Global variables
-MAX_VILLAGES = 500
+MAX_VILLAGES = 1500
 SETTLEMENT_FILE = "settlements.json"
 
 # Generate spiral village IDs
@@ -48,13 +48,18 @@ async def is_village_empty(cookies, village_id):
         return '»building a new village' in response.text
 
 # Find empty village spots and update the settlement file
+# Find empty village spots and update the settlement file
 async def find_empty_village_spots(cookies, potential_village_ids):
     settlements = load_settlements()
-    settled_villages = {village["id"] for village in settlements["villages"]}
+    settled_villages = {village["id"]: village for village in settlements["villages"]}
     new_settlements = []
     for village_id in potential_village_ids:
-        if village_id not in settled_villages and await is_village_empty(cookies, village_id):
-            new_settlements.append({"id": village_id, "settled": False})
+        if village_id not in settled_villages:
+            if await is_village_empty(cookies, village_id):
+                new_settlements.append({"id": village_id, "settled": False})
+            else:
+                settled_villages[village_id] = {"id": village_id, "settled": True}
+    settlements["villages"] = list(settled_villages.values())
     settlements["villages"].extend(new_settlements)
     save_settlements(settlements)
     logging.info(f"Found {len(new_settlements)} new empty village spots.")
