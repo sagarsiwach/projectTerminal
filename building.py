@@ -385,7 +385,6 @@ def train_settlers_and_find_new_village():
         for settlement in settlements["villages"]:
             village_id = settlement["id"]
             if not settlement["settled"]:  # Check if the village is not settled
-                settlement["settled"] = True
                 driver.get(f"https://fun.gotravspeed.com/village3.php?id={village_id}")
                 logging.info(f"Checking village ID {village_id} for suitability")
                 if "building a new village" in driver.page_source:
@@ -407,7 +406,7 @@ def train_settlers_and_find_new_village():
                     except TimeoutException:
                         logging.error("Timeout waiting for new village popup.")
 
-                # Mark the village as settled in the JSON data regardless of suitability
+                # Mark the village as settled in the JSON data
                 settlement["settled"] = True
 
         # Save the updated settlements to the JSON file
@@ -417,6 +416,7 @@ def train_settlers_and_find_new_village():
         logging.info("Finished training settlers and finding a new village")
     except Exception as e:
         logging.error(f"Error during training settlers and finding a new village: {e}")
+
 
 
 # Function to switch to the 0000 village
