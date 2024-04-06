@@ -23,6 +23,9 @@ headers = {
 
 async def login():
     async with httpx.AsyncClient() as client:
+        # Clear any existing cookies
+        client.cookies.clear()
+
         # Step 1: Navigate to the main page
         response = await client.get(base_url, headers=headers)
         if response.status_code != 200:
