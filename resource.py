@@ -30,10 +30,9 @@ async def increase_production_async(loop_count, cookies):
                 key_element = soup.find('input', {'name': 'key'})
 
                 if key_element is None:
-                    logger.error("Failed to find key for increasing production. Retrying login...")
-                    cookies = await login()
-                    get_response = await client.get("https://fun.gotravspeed.com/buy2.php?t=0")  # Fetch the page again to get a new key
-                    continue  # Skip this iteration and retry with new login
+                    logger.error("Failed to find key for increasing production. Restarting script.")
+                    subprocess.Popen([sys.executable, 'main.py'])  # Start a new instance of the script
+                    sys.exit(1)  # Exit the current script
 
                 key = key_element['value']
 
@@ -47,8 +46,7 @@ async def increase_production_async(loop_count, cookies):
                 await client.post("https://fun.gotravspeed.com/buy2.php?t=0&Shop=done", data=data)
                 logger.info("Production Increased")
             except Exception as e:
-                logger.error(f"Error during storage increase: {e}")
-
+                logger.error(f"Error during production increase: {e}")
 
 async def increase_storage_async(loop_count, cookies):
     async with httpx.AsyncClient(cookies=cookies) as client:
@@ -60,19 +58,9 @@ async def increase_storage_async(loop_count, cookies):
                 key_element = soup.find('input', {'name': 'key'})
 
                 if key_element is None:
-                    logger.error("Failed to find key for increasing storage. Retrying login...")
-                    cookies = await login()
-                    # Add a delay to ensure the page is fully loaded before trying to get the key again
-                    await asyncio.sleep(2)
-                    get_response = await client.get("https://fun.gotravspeed.com/buy2.php?t=2")
-                    soup = BeautifulSoup(get_response.text, 'html.parser')
-                    key_element = soup.find('input', {'name': 'key'})
-
-                    # Check if the key is still not found after re-login
-                    if key_element is None:
-                        logger.error("Failed to find key for increasing storage after re-login. Restarting script.")
-                        subprocess.Popen([sys.executable, 'main.py'])  # Start a new instance of the script
-                        sys.exit(1)  # Exit the current script
+                    logger.error("Failed to find key for increasing storage. Restarting script.")
+                    subprocess.Popen([sys.executable, 'main.py'])  # Start a new instance of the script
+                    sys.exit(1)  # Exit the current script
 
                 key = key_element['value']
 
@@ -87,6 +75,7 @@ async def increase_storage_async(loop_count, cookies):
                 logger.info("Storage Increased")
             except Exception as e:
                 logger.error(f"Error during storage increase: {e}")
+
 
 # Asynchronous function to start a large celebration multiple times
 async def start_large_celebration(loop_count, cookies):

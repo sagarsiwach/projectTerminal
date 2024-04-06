@@ -1,21 +1,21 @@
 import asyncio
-import httpx
-from resource import increase_production_async, increase_storage_async, start_large_celebration
-from building import construct_capital
-from config import read_config
+import subprocess
+import sys
+from resource import increase_production_async, increase_storage_async
 from login import login
 
 async def main():
-    cookies = await login()
-    config = read_config()
+    try:
+        cookies = await login()
 
-    # Increase production and storage without a loop
-    # await construct_capital(cookies)
-    while True:
+        # Perform your tasks
         await increase_storage_async(2500, cookies)
-        await increase_production_async(5000, cookies)
-        # await start_large_celebration(100000, cookies)
-        # print(f"Production completed: {config['production_completed']}, Storage completed: {config['storage_completed']}")
+        await increase_production_async(50000, cookies)
+
+    except Exception as e:
+        print(f"An error occurred: {e}. Restarting script.")
+        subprocess.Popen([sys.executable, 'main.py'])  # Start a new instance of the script
+        sys.exit(1)  # Exit the current script
 
 if __name__ == "__main__":
     asyncio.run(main())
