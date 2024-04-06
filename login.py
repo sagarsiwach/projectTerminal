@@ -26,6 +26,9 @@ async def login():
         # Clear any existing cookies
         client.cookies.clear()
 
+        # Sleep for 1 second before logging in
+        await asyncio.sleep(1)
+
         # Step 1: Navigate to the main page
         response = await client.get(base_url, headers=headers)
         if response.status_code != 200:
